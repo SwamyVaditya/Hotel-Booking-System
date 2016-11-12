@@ -68,7 +68,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Booking.xaml">
+    <Page Include="BookingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -88,8 +88,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Booking.xaml.cs">
-      <DependentUpon>Booking.xaml</DependentUpon>
+    <Compile Include="Booking.cs" />
+    <Compile Include="BookingWindow.xaml.cs">
+      <DependentUpon>BookingWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Customer.xaml.cs">
       <DependentUpon>Customer.xaml</DependentUpon>
