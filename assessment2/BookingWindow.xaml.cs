@@ -35,7 +35,6 @@ namespace assessment2
         private void btn_addbooking_Click(object sender, RoutedEventArgs e)
         {
             
-            newbooking.BookingRef = int.Parse(txt_bookingref.Text);
             newbooking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
             newbooking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
            MainWindow.bookingslist.Add(newbooking);

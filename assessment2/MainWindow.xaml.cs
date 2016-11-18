@@ -32,7 +32,7 @@ namespace assessment2
         {
             var newWindow = new BookingWindow(this);
             newWindow.ShowDialog();
-           // this.updateBookings();
+            //this.updateBookings();
         }
 
         private void btn_addcustomer_Click(object sender, RoutedEventArgs e)
@@ -53,10 +53,11 @@ namespace assessment2
         }
 
 
-        /*public void updateBookings()
+        public void addcustomer()
         {
-           
-        }*/
+           for each (Customer in Customer List )
+               ;
+        }
 
     }
 }
