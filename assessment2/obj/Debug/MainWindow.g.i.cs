@@ -106,31 +106,31 @@ namespace assessment2 {
         
         #line 38 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.ListView lv_bookings;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 45 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.ListView lv_customers;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 52 "..\..\MainWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btn_deletebooking;
         
         #line default
         #line hidden
         
         
-        #line 53 "..\..\MainWindow.xaml"
+        #line 39 "..\..\MainWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btn_deletecustomer;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 40 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.ComboBox cmbo_bookings;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 41 "..\..\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.ComboBox cmbo_customers;
         
         #line default
         #line hidden
@@ -214,16 +214,16 @@ namespace assessment2 {
             #line hidden
             return;
             case 9:
-            this.lv_bookings = ((System.Windows.Controls.ListView)(target));
-            return;
-            case 10:
-            this.lv_customers = ((System.Windows.Controls.ListView)(target));
-            return;
-            case 11:
             this.btn_deletebooking = ((System.Windows.Controls.Button)(target));
             return;
-            case 12:
+            case 10:
             this.btn_deletecustomer = ((System.Windows.Controls.Button)(target));
+            return;
+            case 11:
+            this.cmbo_bookings = ((System.Windows.Controls.ComboBox)(target));
+            return;
+            case 12:
+            this.cmbo_customers = ((System.Windows.Controls.ComboBox)(target));
             return;
             }
             this._contentLoaded = true;

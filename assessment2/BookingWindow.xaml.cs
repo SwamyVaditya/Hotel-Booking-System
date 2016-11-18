@@ -19,9 +19,12 @@ namespace assessment2
     /// </summary>
     public partial class BookingWindow : Window
     {
-        public BookingWindow()
+        private MainWindow mw;
+        Booking newbooking = new Booking();
+        public BookingWindow(MainWindow mw)
         {
             InitializeComponent();
+            this.mw = mw;
         }
 
         private void btn_cancel_Click(object sender, RoutedEventArgs e)
@@ -31,11 +34,11 @@ namespace assessment2
 
         private void btn_addbooking_Click(object sender, RoutedEventArgs e)
         {
-            Booking newbooking = new Booking();
+            
             newbooking.BookingRef = int.Parse(txt_bookingref.Text);
             newbooking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
             newbooking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
-            MainWindow.bookingslist.Add(newbooking);
+           MainWindow.bookingslist.Add(newbooking);
 
         }
     }

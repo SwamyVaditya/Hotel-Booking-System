@@ -7,10 +7,8 @@
             <ColumnDefinition Width="61*"/>
             <ColumnDefinition Width="287*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="lbl_bookingref" Content="Booking Reference Number :" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <Label x:Name="lbl_arrivaldate" Content="Arrival Date :" HorizontalAlignment="Left" Margin="32.728,99,0,0" VerticalAlignment="Top" Grid.Column="1"/>
         <Label x:Name="lbl_departuredate" Content="Departure Date :" HorizontalAlignment="Left" Margin="12.728,157,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox x:Name="txt_bookingref" HorizontalAlignment="Left" Height="23" Margin="119.728,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
         <Button x:Name="btn_addbooking" Content="Add Booking" HorizontalAlignment="Left" Margin="98.728,226,0,0" VerticalAlignment="Top" Width="75" Click="btn_addbooking_Click" Grid.Column="1"/>
         <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" Margin="182.728,226,0,0" VerticalAlignment="Top" Width="75" Click="btn_cancel_Click" Grid.Column="1"/>
         <DatePicker x:Name="date_arrivalDate" Grid.Column="1" HorizontalAlignment="Left" Margin="120,99,0,0" VerticalAlignment="Top"/>

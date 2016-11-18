@@ -42,7 +42,7 @@ namespace assessment2 {
         
         #line 10 "..\..\BookingWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lbl_bookingref;
+        internal System.Windows.Controls.Label lbl_arrivaldate;
         
         #line default
         #line hidden
@@ -50,7 +50,7 @@ namespace assessment2 {
         
         #line 11 "..\..\BookingWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lbl_arrivaldate;
+        internal System.Windows.Controls.Label lbl_departuredate;
         
         #line default
         #line hidden
@@ -58,7 +58,7 @@ namespace assessment2 {
         
         #line 12 "..\..\BookingWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label lbl_departuredate;
+        internal System.Windows.Controls.Button btn_addbooking;
         
         #line default
         #line hidden
@@ -66,7 +66,7 @@ namespace assessment2 {
         
         #line 13 "..\..\BookingWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBox txt_bookingref;
+        internal System.Windows.Controls.Button btn_cancel;
         
         #line default
         #line hidden
@@ -74,29 +74,13 @@ namespace assessment2 {
         
         #line 14 "..\..\BookingWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btn_addbooking;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 15 "..\..\BookingWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btn_cancel;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 16 "..\..\BookingWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DatePicker date_arrivalDate;
         
         #line default
         #line hidden
         
         
-        #line 17 "..\..\BookingWindow.xaml"
+        #line 15 "..\..\BookingWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DatePicker date_departureDate;
         
@@ -134,39 +118,33 @@ namespace assessment2 {
             switch (connectionId)
             {
             case 1:
-            this.lbl_bookingref = ((System.Windows.Controls.Label)(target));
-            return;
-            case 2:
             this.lbl_arrivaldate = ((System.Windows.Controls.Label)(target));
             return;
-            case 3:
+            case 2:
             this.lbl_departuredate = ((System.Windows.Controls.Label)(target));
             return;
-            case 4:
-            this.txt_bookingref = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 5:
+            case 3:
             this.btn_addbooking = ((System.Windows.Controls.Button)(target));
             
-            #line 14 "..\..\BookingWindow.xaml"
+            #line 12 "..\..\BookingWindow.xaml"
             this.btn_addbooking.Click += new System.Windows.RoutedEventHandler(this.btn_addbooking_Click);
             
             #line default
             #line hidden
             return;
-            case 6:
+            case 4:
             this.btn_cancel = ((System.Windows.Controls.Button)(target));
             
-            #line 15 "..\..\BookingWindow.xaml"
+            #line 13 "..\..\BookingWindow.xaml"
             this.btn_cancel.Click += new System.Windows.RoutedEventHandler(this.btn_cancel_Click);
             
             #line default
             #line hidden
             return;
-            case 7:
+            case 5:
             this.date_arrivalDate = ((System.Windows.Controls.DatePicker)(target));
             return;
-            case 8:
+            case 6:
             this.date_departureDate = ((System.Windows.Controls.DatePicker)(target));
             return;
             }
