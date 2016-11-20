@@ -21,7 +21,9 @@ namespace assessment2
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static ArrayList customerlist = new ArrayList();
         public static ArrayList bookingslist = new ArrayList();
+        Customer newCustomer = new Customer();
         
         public MainWindow()
         {
@@ -37,8 +39,10 @@ namespace assessment2
 
         private void btn_addcustomer_Click(object sender, RoutedEventArgs e)
         {
-            var newWindow = new Customer();
+            var newWindow = new CustomerWindow(newCustomer);
             newWindow.ShowDialog();
+            
+            
         }
 
         private void btn_invoice_Click(object sender, RoutedEventArgs e)
@@ -53,11 +57,12 @@ namespace assessment2
         }
 
 
-        public void addcustomer()
+       /* public void addcustomer()
         {
-           for each (Customer in Customer List )
-               ;
-        }
+            lb_customer.Items.Add("hello");
+        }*/
+
+        
 
     }
 }

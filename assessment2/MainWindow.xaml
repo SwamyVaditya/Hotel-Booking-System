@@ -37,8 +37,9 @@
         <Button x:Name="btn_quit" Content="Quit" HorizontalAlignment="Left" Margin="552,417,0,0" VerticalAlignment="Top" Width="76" Click="btn_quit_Click"/>
         <Button x:Name="btn_deletebooking" Content="Delete Booking" HorizontalAlignment="Left" Margin="149,446,0,0" VerticalAlignment="Top" Width="98"/>
         <Button x:Name="btn_deletecustomer" Content="Delete Customer" HorizontalAlignment="Left" Margin="23,446,0,0" VerticalAlignment="Top" Width="101"/>
-        <ComboBox x:Name="cmbo_bookings" HorizontalAlignment="Left" Margin="105,145,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cmbo_customers" HorizontalAlignment="Left" Margin="258,145,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cmbo_bookings" HorizontalAlignment="Left" Margin="149,268,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cmbo_customers" HorizontalAlignment="Left" Margin="338,268,0,0" VerticalAlignment="Top" Width="120"/>
+        <ListBox x:Name="lb_customer" HorizontalAlignment="Left" Height="170" Margin="54,76,0,0" VerticalAlignment="Top" Width="262" SelectionChanged="lb_customer_SelectionChanged"/>
 
     </Grid>
 </Window>

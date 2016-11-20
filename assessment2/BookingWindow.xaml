@@ -1,18 +1,30 @@
 ﻿<Window x:Class="assessment2.BookingWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Booking" Height="300" Width="356.485">
-    <Grid>
+        Title="Booking" Height="569.874" Width="485.774">
+    <Grid x:Name="lbl_Breakfast">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="61*"/>
             <ColumnDefinition Width="287*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="lbl_arrivaldate" Content="Arrival Date :" HorizontalAlignment="Left" Margin="32.728,99,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Label x:Name="lbl_departuredate" Content="Departure Date :" HorizontalAlignment="Left" Margin="12.728,157,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Button x:Name="btn_addbooking" Content="Add Booking" HorizontalAlignment="Left" Margin="98.728,226,0,0" VerticalAlignment="Top" Width="75" Click="btn_addbooking_Click" Grid.Column="1"/>
-        <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" Margin="182.728,226,0,0" VerticalAlignment="Top" Width="75" Click="btn_cancel_Click" Grid.Column="1"/>
-        <DatePicker x:Name="date_arrivalDate" Grid.Column="1" HorizontalAlignment="Left" Margin="120,99,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="date_departureDate" Grid.Column="1" HorizontalAlignment="Left" Margin="120,157,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_arrivaldate" Content="Arrival Date :" HorizontalAlignment="Left" Margin="30,192,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label x:Name="lbl_departuredate" Content="Departure Date :" HorizontalAlignment="Left" Margin="30,235,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn_addbooking" Content="Add Booking" HorizontalAlignment="Left" Margin="192,493,0,0" VerticalAlignment="Top" Width="75" Click="btn_addbooking_Click" Grid.Column="1"/>
+        <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" Margin="283,493,0,0" VerticalAlignment="Top" Width="75" Click="btn_cancel_Click" Grid.Column="1"/>
+        <DatePicker x:Name="date_arrivalDate" Grid.Column="1" HorizontalAlignment="Left" Margin="50,192,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="date_departureDate" Grid.Column="1" HorizontalAlignment="Center" Margin="50,235,242,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_title" Content="Add Booking" Grid.Column="1" HorizontalAlignment="Left" Margin="45,25,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="lbl_select_customer" Content="Select Customer : " HorizontalAlignment="Left" Margin="30,70,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <ListBox Grid.Column="1" HorizontalAlignment="Left" Height="90" Margin="50,70,0,0" VerticalAlignment="Top" Width="221"/>
+        <CheckBox Content="(Check if Evening meals are added on)" Grid.Column="1" HorizontalAlignment="Left" Margin="35,353,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="(Check if Breakfast is added on)" Grid.Column="1" HorizontalAlignment="Left" Margin="35,392,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_EveningMeal" Content="Evening Meal" HorizontalAlignment="Left" Margin="30,348,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label x:Name="lbl_Breakfast1" Content="Breakfast" HorizontalAlignment="Left" Margin="30,385,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label x:Name="lbl_CarHire" Content="Car Hire" HorizontalAlignment="Left" Margin="30,424,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="(Check if car hire is requested)" Grid.Column="1" HorizontalAlignment="Left" Margin="35,430,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_extras" Content="Add Extras" Grid.Column="1" HorizontalAlignment="Left" Margin="50,304,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Separator HorizontalAlignment="Left" Height="5" Margin="20,281,0,0" VerticalAlignment="Top" Width="435" Grid.ColumnSpan="2"/>
+        <Separator HorizontalAlignment="Left" Height="5" Margin="20,175,0,0" VerticalAlignment="Top" Width="435" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
