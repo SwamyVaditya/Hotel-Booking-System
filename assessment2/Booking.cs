@@ -8,11 +8,22 @@ namespace assessment2
 {
     class Booking
     {
+        private int customerRef;
         private int bookingRef;
         private DateTime arrivalDate;
         private DateTime departureDate;
 
-
+        public int CustomerRef
+        {
+            get
+            {
+                return customerRef;
+            }
+            set
+            {
+                //customerRef = MainWindow.lv_Customers.selectedItem.Content;
+            }
+        }
         public int BookingRef
         {
             get

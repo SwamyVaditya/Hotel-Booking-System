@@ -49,9 +49,10 @@ namespace assessment2
 
         private void btn_addbooking_Click(object sender, RoutedEventArgs e)
         {
-            var newWindow = new BookingWindow(this);
+            var newWindow = new BookingWindow(this, customerlist);
             newWindow.ShowDialog();
-            //this.updateBookings();
+            
+            
         }
 
         private void btn_addcustomer_Click(object sender, RoutedEventArgs e)
@@ -77,8 +78,8 @@ namespace assessment2
 
         public void addcustomer(Customer newCustomer)
         {
-            lb_customer.Items.Add(newCustomer.name + " " + newCustomer.address);
             lv_Customers.Items.Add(new Customer { customerRef = newCustomer.customerRef, name = newCustomer.name, address = newCustomer.address});
+            
         }
 
         

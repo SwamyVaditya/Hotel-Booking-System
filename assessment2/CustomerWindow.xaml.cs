@@ -19,7 +19,7 @@ namespace assessment2
     /// </summary>
     public partial class CustomerWindow : Window
     {
-        int CustomerRef = 0;
+        static int CustomerRef = 1;
         private MainWindow window;
         
         public CustomerWindow(MainWindow window)
@@ -39,8 +39,9 @@ namespace assessment2
             Customer newCustomer = new Customer();
             newCustomer.name = txt_name.Text;
             newCustomer.address = txt_address.Text;
-            
-           
+            newCustomer.customerRef = CustomerRef;
+            CustomerRef++;
+            window.customerlist.Add(newCustomer.customerRef);
             window.addcustomer(newCustomer);
 
             this.Close();
