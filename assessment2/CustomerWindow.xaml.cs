@@ -19,6 +19,7 @@ namespace assessment2
     /// </summary>
     public partial class CustomerWindow : Window
     {
+        int CustomerRef = 0;
         private MainWindow window;
         
         public CustomerWindow(MainWindow window)
@@ -34,11 +35,11 @@ namespace assessment2
 
         private void btn_addCustomer_Click(object sender, RoutedEventArgs e)
         {
-            int CustomerRef = 0;
+           
             Customer newCustomer = new Customer();
             newCustomer.name = txt_name.Text;
             newCustomer.address = txt_address.Text;
-            newCustomer.customerRef = CustomerRef + 1;
+            
            
             window.addcustomer(newCustomer);
 

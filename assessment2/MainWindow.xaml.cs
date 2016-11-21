@@ -28,6 +28,23 @@ namespace assessment2
         public MainWindow()
         {
             InitializeComponent();
+            var gridView = new GridView();
+            lv_Customers.View = gridView;
+            gridView.Columns.Add(new GridViewColumn
+            {
+                Header = "Customer Ref   ",
+                DisplayMemberBinding = new Binding("customerRef")
+            });
+            gridView.Columns.Add(new GridViewColumn
+            {
+                Header = "Name                   ",
+                DisplayMemberBinding = new Binding("name")
+            });
+            gridView.Columns.Add(new GridViewColumn
+            {
+                Header = "Address                ",
+                DisplayMemberBinding = new Binding("address")
+            });
         }
 
         private void btn_addbooking_Click(object sender, RoutedEventArgs e)
@@ -61,8 +78,10 @@ namespace assessment2
         public void addcustomer(Customer newCustomer)
         {
             lb_customer.Items.Add(newCustomer.name + " " + newCustomer.address);
-            
+            lv_Customers.Items.Add(new Customer { customerRef = newCustomer.customerRef, name = newCustomer.name, address = newCustomer.address});
         }
+
+        
 
         
 
