@@ -37,7 +37,7 @@ namespace assessment2
             
             newbooking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
             newbooking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
-           MainWindow.bookingslist.Add(newbooking);
+           //MainWindow.bookingslist.Add(newbooking);
 
         }
     }

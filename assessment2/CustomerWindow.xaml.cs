@@ -19,9 +19,12 @@ namespace assessment2
     /// </summary>
     public partial class CustomerWindow : Window
     {
-        public CustomerWindow(Customer newCustomer)
+        private MainWindow window;
+        
+        public CustomerWindow(MainWindow window)
         {
             InitializeComponent();
+            this.window = window;
         }
 
         private void btn_Cancel_Click(object sender, RoutedEventArgs e)
@@ -32,11 +35,13 @@ namespace assessment2
         private void btn_addCustomer_Click(object sender, RoutedEventArgs e)
         {
             int CustomerRef = 0;
-           // Customer newCustomer = new Customer();
+            Customer newCustomer = new Customer();
             newCustomer.name = txt_name.Text;
             newCustomer.address = txt_address.Text;
             newCustomer.customerRef = CustomerRef + 1;
-            
+           
+            window.addcustomer(newCustomer);
+
             this.Close();
            
         }
