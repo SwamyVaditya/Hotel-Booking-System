@@ -21,7 +21,7 @@ namespace assessment2
             }
             set
             {
-                //customerRef = MainWindow.lv_Customers.selectedItem.Content;
+                
             }
         }
         public int BookingRef
@@ -62,6 +62,8 @@ namespace assessment2
             }
         }
 
+
+        
        
     }
 }

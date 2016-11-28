@@ -20,6 +20,10 @@ namespace assessment2
             }
             set
             {
+                if (String.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("Name cannot be left blank.");
+                }
                 Name = value;
             }
         }
@@ -32,6 +36,10 @@ namespace assessment2
             }
             set
             {
+                if (String.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("Passport number cannot be left blank.");
+                }
                 PassportNumber = value;
             }
         }
@@ -44,6 +52,10 @@ namespace assessment2
             }
             set
             {
+                if (value < 0 || value > 101 || String.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new ArgumentException("Guest age must be within the specified range (0-101 Years old)");
+                }
                 Age = value;
             }
         }

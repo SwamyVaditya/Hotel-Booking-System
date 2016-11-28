@@ -20,6 +20,8 @@ namespace assessment2
     /// </summary>
     public partial class BookingWindow : Window
     {
+        static int BookingRef = 1;
+        public ArrayList guestlist = new ArrayList();
         private ArrayList customerlist1=new ArrayList();
         private MainWindow window;
         
@@ -42,6 +44,7 @@ namespace assessment2
         private void btn_addbooking_Click(object sender, RoutedEventArgs e)
         {
             Booking newbooking = new Booking();
+            newbooking.BookingRef = BookingRef++;
             newbooking.CustomerRef = Int32.Parse(booking_lv.SelectedItem.ToString());
             newbooking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
             newbooking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
@@ -49,22 +52,65 @@ namespace assessment2
             this.Close();
         }
 
-        private void btn_guest_Click(object sender, RoutedEventArgs e)
-        {
+        
 
-        }
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
             Guest newGuest = new Guest();
-            newGuest.name = txt_name.Text;
-            newGuest.passportNumber = txt_passport.Text;
-            newGuest.age = int.Parse(txt_age.Text);
+
+            try
+            {
+                newGuest.name = txt_name.Text;
+            }
+            catch(Exception ntblank)
+            {
+                MessageBox.Show("An error has occured: " + ntblank.Message);
+                return;
+            }
+            try
+            {
+                newGuest.passportNumber = txt_passport.Text;
+            }
+            catch (Exception blank)
+            {
+                MessageBox.Show("An error has occured: " + blank.Message);
+               return;
+            }
+            try
+            {
+                newGuest.age = int.Parse(txt_age.Text);
+            }
+            catch (Exception outrange)
+            {
+                MessageBox.Show("An error has occured: " + outrange.Message);
+                
+            }
+            
             txt_name.Clear();
             txt_passport.Clear();
             txt_age.Clear();
-            lv_guests.Items.Add(newGuest.name + "\n" + newGuest.passportNumber + "\n" + newGuest.age);
 
+            addGuest(newGuest);
+            guestlist.Add(newGuest);
+            updateGuestList();
+            
+           lv_guests.Items.Add(newGuest.name + "\n" + newGuest.passportNumber + "\n" + newGuest.age);
+
+        }
+
+        public void addGuest(Guest newGuest)
+        {
+            lv_guests.Items.Add(new Guest { name = newGuest.name, age = newGuest.age, passportNumber = newGuest.passportNumber });
+        }
+
+        public void updateGuestList()
+        {
+            lv_guests.Items.Clear();
+            foreach (Guest g in guestlist)
+            {
+                lv_guests.Items.Add(g);
+            }
         }
 
         private void btn_delguest_Click(object sender, RoutedEventArgs e)
@@ -77,10 +123,13 @@ namespace assessment2
              foreach (String eachItem in guestlist)
              {
                  lv_guests.Items.Remove(eachItem);
-             }
-
-            
+             } 
         }
+
+
+
+
+
 
        
     }
