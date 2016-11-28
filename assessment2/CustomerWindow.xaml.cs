@@ -41,8 +41,9 @@ namespace assessment2
             newCustomer.address = txt_address.Text;
             newCustomer.customerRef = CustomerRef;
             CustomerRef++;
-            window.customerlist.Add(newCustomer.customerRef);
-            window.addcustomer(newCustomer);
+            window.customerlist.Add(newCustomer);
+          //  window.addcustomer(newCustomer);
+            window.updateCustomerList();
 
             this.Close();
            

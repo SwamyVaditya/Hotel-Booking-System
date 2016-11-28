@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,18 +63,21 @@ namespace assessment2
             txt_name.Clear();
             txt_passport.Clear();
             txt_age.Clear();
-
             lv_guests.Items.Add(newGuest.name + "\n" + newGuest.passportNumber + "\n" + newGuest.age);
 
         }
 
         private void btn_delguest_Click(object sender, RoutedEventArgs e)
         {
-            foreach (ListViewItem i in lv_guests.SelectedItems)
+             List <String> guestlist = new List<String>(); 
+             foreach (String eachItem in lv_guests.SelectedItems)
             {
-                lv_guests.Items.Remove(i);
-
+               guestlist.Add(eachItem);
             }
+             foreach (String eachItem in guestlist)
+             {
+                 lv_guests.Items.Remove(eachItem);
+             }
 
             
         }

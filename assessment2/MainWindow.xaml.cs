@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,6 +81,42 @@ namespace assessment2
         {
             lv_Customers.Items.Add(new Customer { customerRef = newCustomer.customerRef, name = newCustomer.name, address = newCustomer.address});
             
+        }
+
+        public void updateCustomerList() {
+            lv_Customers.Items.Clear();
+        foreach(Customer c in customerlist){
+            lv_Customers.Items.Add(c);
+        }
+        }
+
+        private void btn_deletecustomer_Click(object sender, RoutedEventArgs e)
+        {
+            var selected = lv_Customers.SelectedItem;
+            customerlist.Remove(selected);
+            updateCustomerList();
+
+
+
+
+
+
+
+
+          /*  List <String> CustomerList = new List<String>(); 
+             foreach (Customer eachItem in lv_Customers.SelectedItems)
+            {
+               CustomerList.Add(eachItem);
+            }
+             foreach (String eachItem in CustomerList)
+             {
+                 lv_Customers.Items.Remove(eachItem);
+             }*/
+            //lv_Customers.SelectedIndex
+           /* foreach (Customer eachitem in lv_Customers.SelectedItems)
+            {
+                lv_Customers.Items.Remove(eachitem);
+            }*/
         }
 
         
