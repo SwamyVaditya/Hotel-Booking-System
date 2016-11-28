@@ -86,23 +86,26 @@ namespace assessment2
                 MessageBox.Show("An error has occured: " + outrange.Message);
                 
             }
+
+
             
             txt_name.Clear();
             txt_passport.Clear();
             txt_age.Clear();
 
-            addGuest(newGuest);
+
+
+
             guestlist.Add(newGuest);
-            updateGuestList();
-            
-           lv_guests.Items.Add(newGuest.name + "\n" + newGuest.passportNumber + "\n" + newGuest.age);
-
+           lv_guests.Items.Add(newGuest.name + " " + newGuest.passportNumber + " " + newGuest.age);
+          // addGuest(newGuest);
+           
         }
 
-        public void addGuest(Guest newGuest)
-        {
-            lv_guests.Items.Add(new Guest { name = newGuest.name, age = newGuest.age, passportNumber = newGuest.passportNumber });
-        }
+       // public void addGuest(Guest newGuest)
+       // {
+          //  lv_guests.Items.Add(new Guest { name = newGuest.name, age = newGuest.age, passportNumber = newGuest.passportNumber });
+       // }
 
         public void updateGuestList()
         {
