@@ -42,7 +42,7 @@ namespace assessment2
             newCustomer.customerRef = CustomerRef;
             CustomerRef++;
             window.customerlist.Add(newCustomer);
-          //  window.addcustomer(newCustomer);
+            window.addcustomer(newCustomer);
             window.updateCustomerList();
 
             this.Close();

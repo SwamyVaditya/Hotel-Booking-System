@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assessment2
 {
-    class Booking
+    public class Booking
     {
         private int customerRef;
         private int bookingRef;
@@ -21,7 +21,7 @@ namespace assessment2
             }
             set
             {
-                
+                customerRef = value;
             }
         }
         public int BookingRef

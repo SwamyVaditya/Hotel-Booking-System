@@ -18,7 +18,7 @@
         <Label x:Name="lbl_bookings" Content="Bookings" HorizontalAlignment="Left" Margin="393,256,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="lbl_Customers" Content="Customers" HorizontalAlignment="Left" Margin="391,38,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Button x:Name="btn_quit" Content="Quit" HorizontalAlignment="Left" Margin="415,516,0,0" VerticalAlignment="Top" Width="76" Click="btn_quit_Click"/>
-        <Button x:Name="btn_deletebooking" Content="Delete Booking" HorizontalAlignment="Left" Margin="393,340,0,0" VerticalAlignment="Top" Width="98"/>
+        <Button x:Name="btn_deletebooking" Content="Delete Booking" HorizontalAlignment="Left" Margin="393,340,0,0" VerticalAlignment="Top" Width="98" Click="btn_deletebooking_Click"/>
         <Button x:Name="btn_deletecustomer" Content="Delete Customer" HorizontalAlignment="Left" Margin="391,122,0,0" VerticalAlignment="Top" Width="101" Click="btn_deletecustomer_Click"/>
         <ListView x:Name="lv_Customers" HorizontalAlignment="Left" Height="204" Margin="10,10,0,0" VerticalAlignment="Top" Width="348">
             <ListView.View>
@@ -27,7 +27,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView HorizontalAlignment="Left" Height="201" Margin="10,233,0,0" VerticalAlignment="Top" Width="348">
+        <ListView x:Name="lv_bookings" HorizontalAlignment="Left" Height="201" Margin="10,233,0,0" VerticalAlignment="Top" Width="348">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

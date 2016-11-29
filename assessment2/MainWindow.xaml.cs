@@ -25,6 +25,7 @@ namespace assessment2
         public ArrayList customerlist = new ArrayList();
         public ArrayList bookingslist = new ArrayList();
         Customer newCustomer = new Customer();
+        Booking newBooking = new Booking();
         
         public MainWindow()
         {
@@ -45,6 +46,21 @@ namespace assessment2
             {
                 Header = "Address                ",
                 DisplayMemberBinding = new Binding("address")
+            });
+
+          
+            var gridView1 = new GridView();
+            lv_bookings.View = gridView1;
+            
+            gridView1.Columns.Add(new GridViewColumn
+            {
+                Header = "Booking Ref                   ",
+                DisplayMemberBinding = new Binding("BookingRef")
+            });
+            gridView1.Columns.Add(new GridViewColumn
+            {
+                Header = "Customer Ref                ",
+                DisplayMemberBinding = new Binding("CustomerRef")
             });
         }
 
@@ -77,17 +93,51 @@ namespace assessment2
         }
 
 
+        public void addbooking(Booking newBooking)
+        {
+
+            lv_bookings.Items.Add(new Booking { BookingRef = newBooking.BookingRef, CustomerRef = newBooking.CustomerRef, ArrivalDate = newBooking.ArrivalDate, DepartureDate = newBooking.DepartureDate });
+
+        }
+
+
+
         public void addcustomer(Customer newCustomer)
         {
+           
             lv_Customers.Items.Add(new Customer { customerRef = newCustomer.customerRef, name = newCustomer.name, address = newCustomer.address});
             
         }
 
-        public void updateCustomerList() {
+
+        public void updateBookingList()
+        {
+            lv_bookings.Items.Clear();
+            foreach(Booking b in bookingslist)
+            {
+                lv_bookings.Items.Add(b);
+            }
+
+        }
+
+
+
+        public void updateCustomerList()
+        {
             lv_Customers.Items.Clear();
-        foreach(Customer c in customerlist){
+        foreach(Customer c in customerlist)
+        {
             lv_Customers.Items.Add(c);
         }
+        }
+
+
+        private void btn_deletebooking_Click(object sender, RoutedEventArgs e)
+        {
+            var selected = lv_bookings.SelectedItem;
+            bookingslist.Remove(selected);
+            updateBookingList();
+
         }
 
         private void btn_deletecustomer_Click(object sender, RoutedEventArgs e)
@@ -118,6 +168,8 @@ namespace assessment2
                 lv_Customers.Items.Remove(eachitem);
             }*/
         }
+
+       
 
         
 

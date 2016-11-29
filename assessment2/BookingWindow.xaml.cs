@@ -30,9 +30,9 @@ namespace assessment2
             InitializeComponent();
             this.window = window;
             customerlist1 = customerlist;
-            foreach (var Item in customerlist1)
+            foreach (Customer Item in customerlist1)
             {
-                booking_lv.Items.Add(Item);
+                booking_lv.Items.Add(Item.customerRef);
             }
         }
 
@@ -44,11 +44,15 @@ namespace assessment2
         private void btn_addbooking_Click(object sender, RoutedEventArgs e)
         {
             Booking newbooking = new Booking();
-            newbooking.BookingRef = BookingRef++;
+            
             newbooking.CustomerRef = Int32.Parse(booking_lv.SelectedItem.ToString());
             newbooking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
             newbooking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
-           
+            newbooking.BookingRef = BookingRef++;
+            window.bookingslist.Add(newbooking);
+            window.addbooking(newbooking);
+            window.updateBookingList();
+
             this.Close();
         }
 
