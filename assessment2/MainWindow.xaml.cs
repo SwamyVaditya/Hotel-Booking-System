@@ -34,17 +34,17 @@ namespace assessment2
             lv_Customers.View = gridView;
             gridView.Columns.Add(new GridViewColumn
             {
-                Header = "Customer Ref   ",
+                Header = "Customer Ref               ",
                 DisplayMemberBinding = new Binding("customerRef")
             });
             gridView.Columns.Add(new GridViewColumn
             {
-                Header = "Name                   ",
+                Header = "Name                          ",
                 DisplayMemberBinding = new Binding("name")
             });
             gridView.Columns.Add(new GridViewColumn
-            {
-                Header = "Address                ",
+            {   
+                Header = "Address                      ",
                 DisplayMemberBinding = new Binding("address")
             });
 
@@ -54,13 +54,24 @@ namespace assessment2
             
             gridView1.Columns.Add(new GridViewColumn
             {
-                Header = "Booking Ref                   ",
+                Header = "Booking Ref       ",
                 DisplayMemberBinding = new Binding("BookingRef")
             });
             gridView1.Columns.Add(new GridViewColumn
             {
-                Header = "Customer Ref                ",
+                Header = "Customer Ref      ",
                 DisplayMemberBinding = new Binding("CustomerRef")
+            });
+
+            gridView1.Columns.Add(new GridViewColumn
+            {
+                Header = "Arrival Date      ",
+                DisplayMemberBinding = new Binding("ArrivalDate")
+            });
+            gridView1.Columns.Add(new GridViewColumn
+            {
+                Header = "Departure Date    ",
+                DisplayMemberBinding = new Binding("DepartureDate")
             });
         }
 

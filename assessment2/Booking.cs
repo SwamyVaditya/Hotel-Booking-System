@@ -12,6 +12,7 @@ namespace assessment2
         private int bookingRef;
         private DateTime arrivalDate;
         private DateTime departureDate;
+        
 
         public int CustomerRef
         {

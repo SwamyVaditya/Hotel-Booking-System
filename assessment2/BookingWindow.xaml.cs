@@ -76,19 +76,25 @@ namespace assessment2
             {
                 newGuest.passportNumber = txt_passport.Text;
             }
-            catch (Exception blank)
+            catch (ArgumentException blankOrTooLong)
             {
-                MessageBox.Show("An error has occured: " + blank.Message);
+                MessageBox.Show("An error has occured: " + blankOrTooLong.Message);
                return;
             }
+           
             try
             {
                 newGuest.age = int.Parse(txt_age.Text);
             }
-            catch (Exception outrange)
+            catch (ArgumentException outrange)
             {
                 MessageBox.Show("An error has occured: " + outrange.Message);
-                
+                return;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("An error has occured: Is not a numnber");
+                return;
             }
 
 

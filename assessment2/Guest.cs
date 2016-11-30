@@ -40,6 +40,11 @@ namespace assessment2
                 {
                     throw new ArgumentException("Passport number cannot be left blank.");
                 }
+                if (value.Length > 10)
+                {
+                    
+                    throw new ArgumentException("Passport number cannot be less than 10 characters.");
+                }
                 PassportNumber = value;
             }
         }
