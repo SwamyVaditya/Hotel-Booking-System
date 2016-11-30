@@ -22,6 +22,11 @@ namespace assessment2
             }
             set
             {
+                
+                if (String.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new NullReferenceException("You must select a customer reference number.");
+                }
                 customerRef = value;
             }
         }
@@ -45,6 +50,11 @@ namespace assessment2
             }
             set
             {
+                if (arrivalDate == default(DateTime))
+                {
+                    throw new ArgumentException("Arrival Date cannot be left blank");
+                }
+
                 arrivalDate = value;
             }
 
@@ -59,6 +69,10 @@ namespace assessment2
             }
             set
             {
+                if (departureDate == default(DateTime))
+                {
+                    throw new ArgumentException("Departure Date cannot be left blank");
+                }
                 departureDate = value;
             }
         }

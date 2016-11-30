@@ -44,10 +44,26 @@ namespace assessment2
         private void btn_addbooking_Click(object sender, RoutedEventArgs e)
         {
             Booking newbooking = new Booking();
-            
-            newbooking.CustomerRef = Int32.Parse(booking_lv.SelectedItem.ToString());
-            newbooking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
-            newbooking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
+
+            //if (booking_lv.SelectedItem.ToString() is null)
+            try
+            {
+                newbooking.CustomerRef = Int32.Parse(booking_lv.SelectedItem.ToString());
+                newbooking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
+                newbooking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
+            }
+
+            catch (NullReferenceException empty)
+            {
+                MessageBox.Show("An error has occured: " + empty.Message);
+                return;
+            }
+
+            catch (ArgumentException dateNotBlank)
+            {
+                MessageBox.Show("An error has occured: " + dateNotBlank.Message);
+                return;
+            }
             newbooking.BookingRef = BookingRef++;
             window.bookingslist.Add(newbooking);
             window.addbooking(newbooking);

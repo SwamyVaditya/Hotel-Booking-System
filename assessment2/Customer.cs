@@ -20,6 +20,10 @@ namespace assessment2
             }
             set
             {
+                if (String.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Name cannot be left blank.");
+                }
                 Name = value;
             }
         }
@@ -32,6 +36,10 @@ namespace assessment2
             }
             set
             {
+                if (String.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("Address cannot be left blank.");
+                }
                 Address = value;
             }
         }

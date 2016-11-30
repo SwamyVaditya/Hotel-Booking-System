@@ -37,8 +37,19 @@ namespace assessment2
         {
            
             Customer newCustomer = new Customer();
-            newCustomer.name = txt_name.Text;
-            newCustomer.address = txt_address.Text;
+            try
+            {
+                newCustomer.name = txt_name.Text;
+                newCustomer.address = txt_address.Text;
+            }
+            catch (Exception ntblnk)
+            {
+                MessageBox.Show("An error has occured: " + ntblnk.Message);
+                return;
+            }
+           
+            
+            
             newCustomer.customerRef = CustomerRef;
             CustomerRef++;
             window.customerlist.Add(newCustomer);
