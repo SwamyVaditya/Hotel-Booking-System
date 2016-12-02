@@ -37,3 +37,5 @@ H:\assessment2\assessment2\obj\Debug\BookingWindow.baml
 H:\assessment2\assessment2\obj\Debug\BookingWindow.g.cs
 H:\assessment2\assessment2\obj\Debug\CustomerWindow.baml
 H:\assessment2\assessment2\obj\Debug\CustomerWindow.g.cs
+H:\assessment2\assessment2\bin\Debug\Newtonsoft.Json.dll
+H:\assessment2\assessment2\bin\Debug\Newtonsoft.Json.xml

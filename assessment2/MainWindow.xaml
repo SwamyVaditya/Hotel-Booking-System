@@ -17,7 +17,7 @@
         <Button x:Name="btn_editcustomer" Content="Edit Customer" HorizontalAlignment="Left" Margin="525,93,0,0" VerticalAlignment="Top" Width="101"/>
         <Label x:Name="lbl_bookings" Content="Bookings" HorizontalAlignment="Left" Margin="527,256,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="lbl_Customers" Content="Customers" HorizontalAlignment="Left" Margin="525,38,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button x:Name="btn_quit" Content="Quit" HorizontalAlignment="Left" Margin="609,486,0,0" VerticalAlignment="Top" Width="76" Click="btn_quit_Click"/>
+        <Button x:Name="btn_quit" Content="Save &amp; Quit" HorizontalAlignment="Left" Margin="609,486,0,0" VerticalAlignment="Top" Width="76" Click="btn_quit_Click"/>
         <Button x:Name="btn_deletebooking" Content="Delete Booking" HorizontalAlignment="Left" Margin="527,340,0,0" VerticalAlignment="Top" Width="98" Click="btn_deletebooking_Click"/>
         <Button x:Name="btn_deletecustomer" Content="Delete Customer" HorizontalAlignment="Left" Margin="525,122,0,0" VerticalAlignment="Top" Width="101" Click="btn_deletecustomer_Click"/>
         <ListView x:Name="lv_Customers" HorizontalAlignment="Left" Height="204" Margin="10,10,0,0" VerticalAlignment="Top" Width="476">

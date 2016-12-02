@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 
 namespace assessment2
@@ -26,8 +27,7 @@ namespace assessment2
         public ArrayList bookingslist = new ArrayList();
         Customer newCustomer = new Customer();
         Booking newBooking = new Booking();
-        
-        public MainWindow()
+   public MainWindow()
         {
             InitializeComponent();
             var gridView = new GridView();
@@ -73,6 +73,35 @@ namespace assessment2
                 Header = "Departure Date    ",
                 DisplayMemberBinding = new Binding("DepartureDate")
             });
+
+
+       
+       try 
+        {
+           var reader = new StreamReader(File.OpenRead(@"H:\assessment2\Customers.csv"));
+           var line = reader.ReadLine();
+           while (!reader.EndOfStream)
+           {
+               line = reader.ReadLine();
+               var values = line.Split(',');
+
+             //  Customer newCustomer = (values[1], values[2], values[3], Int32.Parse(values[0]));
+               newCustomer.customerRef = (Int32.Parse(values[0]));
+               newCustomer.name = (values[1]);
+               newCustomer.address = (values[2]);
+               addcustomer(newCustomer);
+           }
+        }
+
+       catch
+       {
+           MessageBox.Show("There is no file to write to, one will be made when you save customer information.");
+       }
+     
+
+
+
+
         }
 
         private void btn_addbooking_Click(object sender, RoutedEventArgs e)
@@ -100,6 +129,16 @@ namespace assessment2
 
         private void btn_quit_Click(object sender, RoutedEventArgs e)
         {
+            using (StreamWriter theWriter = new StreamWriter(@"H:\assessment2\Customers.csv"))
+            {
+               theWriter.WriteLine("Ref No.,Name,Address");
+               foreach(Customer newCustomer in customerlist)
+               {
+                  theWriter.Write(newCustomer.customerRef + ",");
+                  theWriter.Write(newCustomer.name + ",");
+                  theWriter.Write(newCustomer.address + "\n");
+               }
+            }
             this.Close();
         }
 
@@ -180,7 +219,12 @@ namespace assessment2
             }*/
         }
 
-      
+        private void btn_editbooking_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+     
 
        
 
