@@ -20,9 +20,13 @@ namespace assessment2
     /// </summary>
     public partial class BookingWindow : Window
     {
+        //Set Up auto increment for the booking ref
         static int BookingRef = 1;
+        //ArrayList to store the guests that have been added to a booking
         public ArrayList guestlist = new ArrayList();
+        //ArrayList to store the customers 
         private ArrayList customerlist1=new ArrayList();
+        //below allows the main window to be referenced outside of the booking window method below
         private MainWindow window;
         
         public BookingWindow(MainWindow window, ArrayList customerlist)
@@ -36,16 +40,17 @@ namespace assessment2
             }
         }
 
+        //When the cancel button is clicked then close the program
         private void btn_cancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        //When the add booking button is clicked then set the values for the variables in the booking class
         private void btn_addbooking_Click(object sender, RoutedEventArgs e)
         {
             Booking newbooking = new Booking();
-
-            //if (booking_lv.SelectedItem.ToString() is null)
+            
             try
             {
                 newbooking.CustomerRef = Int32.Parse(booking_lv.SelectedItem.ToString());
@@ -58,12 +63,13 @@ namespace assessment2
                 MessageBox.Show("An error has occured: " + empty.Message);
                 return;
             }
-
-            catch (ArgumentException dateNotBlank)
+            
+            catch (Exception dateNotBlank)
             {
                 MessageBox.Show("An error has occured: " + dateNotBlank.Message);
                 return;
             }
+            
             newbooking.BookingRef = BookingRef++;
             window.bookingslist.Add(newbooking);
             window.addbooking(newbooking);
@@ -71,9 +77,6 @@ namespace assessment2
 
             this.Close();
         }
-
-        
-
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
@@ -112,26 +115,15 @@ namespace assessment2
                 MessageBox.Show("An error has occured: Is not a numnber");
                 return;
             }
-
-
-            
             txt_name.Clear();
             txt_passport.Clear();
             txt_age.Clear();
-
-
-
-
             guestlist.Add(newGuest);
-           lv_guests.Items.Add(newGuest.name + " " + newGuest.passportNumber + " " + newGuest.age);
-          // addGuest(newGuest);
-           
+            lv_guests.Items.Add(newGuest.name + " " + newGuest.passportNumber + " " + newGuest.age);
+          
         }
 
-       // public void addGuest(Guest newGuest)
-       // {
-          //  lv_guests.Items.Add(new Guest { name = newGuest.name, age = newGuest.age, passportNumber = newGuest.passportNumber });
-       // }
+     
 
         public void updateGuestList()
         {
@@ -154,12 +146,6 @@ namespace assessment2
                  lv_guests.Items.Remove(eachItem);
              } 
         }
-
-
-
-
-
-
-       
+    
     }
 }

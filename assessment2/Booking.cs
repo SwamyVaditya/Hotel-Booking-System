@@ -50,9 +50,9 @@ namespace assessment2
             }
             set
             {
-                if (arrivalDate == default(DateTime))
+                if (arrivalDate == null)
                 {
-                    throw new ArgumentException("Arrival Date cannot be left blank");
+                    throw new NullReferenceException("Arrival Date cannot be left blank");
                 }
 
                 arrivalDate = value;
@@ -69,9 +69,13 @@ namespace assessment2
             }
             set
             {
-                if (departureDate == default(DateTime))
+                if (departureDate == null)
                 {
                     throw new ArgumentException("Departure Date cannot be left blank");
+                }
+                if (arrivalDate.Date < departureDate.Date)
+                {
+                    throw new Exception("Departure Date cannot be before the arrival date.");
                 }
                 departureDate = value;
             }
