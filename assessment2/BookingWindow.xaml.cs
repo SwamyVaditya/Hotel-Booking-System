@@ -25,18 +25,18 @@ namespace assessment2
         //ArrayList to store the guests that have been added to a booking
         public ArrayList guestlist = new ArrayList();
         //ArrayList to store the customers 
-        private ArrayList customerlist1=new ArrayList();
+        private List<Customer> customerlist = new List<Customer>();
         //below allows the main window to be referenced outside of the booking window method below
         private MainWindow window;
-        
-        public BookingWindow(MainWindow window, ArrayList customerlist)
+
+        public BookingWindow(MainWindow window, List<Customer> customerlist)
         {
             InitializeComponent();
             this.window = window;
-            customerlist1 = customerlist;
-            foreach (Customer Item in customerlist1)
+            this.customerlist = customerlist;
+            for (int i = 0; i < this.customerlist.Count; i++)
             {
-                booking_lv.Items.Add(Item.customerRef);
+                booking_lv.Items.Add(this.customerlist[i].customerRef);
             }
         }
 
@@ -50,7 +50,7 @@ namespace assessment2
         private void btn_addbooking_Click(object sender, RoutedEventArgs e)
         {
             Booking newbooking = new Booking();
-            
+
             try
             {
                 newbooking.CustomerRef = Int32.Parse(booking_lv.SelectedItem.ToString());
@@ -63,13 +63,13 @@ namespace assessment2
                 MessageBox.Show("An error has occured: " + empty.Message);
                 return;
             }
-            
+
             catch (Exception dateNotBlank)
             {
                 MessageBox.Show("An error has occured: " + dateNotBlank.Message);
                 return;
             }
-            
+
             newbooking.BookingRef = BookingRef++;
             window.bookingslist.Add(newbooking);
             window.addbooking(newbooking);
@@ -86,7 +86,7 @@ namespace assessment2
             {
                 newGuest.name = txt_name.Text;
             }
-            catch(Exception ntblank)
+            catch (Exception ntblank)
             {
                 MessageBox.Show("An error has occured: " + ntblank.Message);
                 return;
@@ -98,9 +98,9 @@ namespace assessment2
             catch (ArgumentException blankOrTooLong)
             {
                 MessageBox.Show("An error has occured: " + blankOrTooLong.Message);
-               return;
+                return;
             }
-           
+
             try
             {
                 newGuest.age = int.Parse(txt_age.Text);
@@ -120,10 +120,10 @@ namespace assessment2
             txt_age.Clear();
             guestlist.Add(newGuest);
             lv_guests.Items.Add(newGuest.name + " " + newGuest.passportNumber + " " + newGuest.age);
-          
+
         }
 
-     
+
 
         public void updateGuestList()
         {
@@ -136,16 +136,16 @@ namespace assessment2
 
         private void btn_delguest_Click(object sender, RoutedEventArgs e)
         {
-             List <String> guestlist = new List<String>(); 
-             foreach (String eachItem in lv_guests.SelectedItems)
+            List<String> guestlist = new List<String>();
+            foreach (String eachItem in lv_guests.SelectedItems)
             {
-               guestlist.Add(eachItem);
+                guestlist.Add(eachItem);
             }
-             foreach (String eachItem in guestlist)
-             {
-                 lv_guests.Items.Remove(eachItem);
-             } 
+            foreach (String eachItem in guestlist)
+            {
+                lv_guests.Items.Remove(eachItem);
+            }
         }
-    
+
     }
 }

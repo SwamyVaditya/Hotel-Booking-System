@@ -19,23 +19,24 @@ namespace assessment2
     /// </summary>
     public partial class CustomerWindow : Window
     {
-        static int CustomerRef = 1;
         private MainWindow window;
+        static int CustomerRef;
         
+
         public CustomerWindow(MainWindow window)
         {
             InitializeComponent();
             this.window = window;
+            CustomerRef = window.CustRef++;
         }
 
         private void btn_Cancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
+       
         private void btn_addCustomer_Click(object sender, RoutedEventArgs e)
         {
-           
             Customer newCustomer = new Customer();
             try
             {
@@ -47,17 +48,12 @@ namespace assessment2
                 MessageBox.Show("An error has occured: " + ntblnk.Message);
                 return;
             }
-           
-            
-            
-            newCustomer.customerRef = CustomerRef;
             CustomerRef++;
+            newCustomer.customerRef = CustomerRef;
             window.customerlist.Add(newCustomer);
             window.addcustomer(newCustomer);
-            window.updateCustomerList();
-
+           // window.updateCustomerList();
             this.Close();
-           
         }
     }
 }
