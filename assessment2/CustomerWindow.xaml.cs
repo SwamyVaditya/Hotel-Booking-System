@@ -21,14 +21,30 @@ namespace assessment2
     {
         private MainWindow window;
         static int CustomerRef;
-        
+        bool edit;
+        Customer customer;
+        // private List<Customer> customerlist = new List<Customer>();
 
         public CustomerWindow(MainWindow window)
         {
             InitializeComponent();
             this.window = window;
             CustomerRef = window.CustRef++;
+            edit = false;
         }
+        private List<Customer> customerlist = new List<Customer>();
+
+        public CustomerWindow(MainWindow window, Customer customer)
+        {
+            InitializeComponent();
+            this.window = window;
+            edit = true;
+            this.customer = customer;
+            txt_name.Text = customer.Name;
+            txt_address.Text = customer.Address;
+        }
+
+        
 
         private void btn_Cancel_Click(object sender, RoutedEventArgs e)
         {
@@ -37,23 +53,46 @@ namespace assessment2
        
         private void btn_addCustomer_Click(object sender, RoutedEventArgs e)
         {
-            Customer newCustomer = new Customer();
-            try
+            if (!edit)
             {
-                newCustomer.Name = txt_name.Text;
-                newCustomer.Address = txt_address.Text;
+                Customer newCustomer = new Customer();
+                try
+                {
+                    newCustomer.Name = txt_name.Text;
+                    newCustomer.Address = txt_address.Text;
+                }
+                catch (Exception ntblnk)
+                {
+                    MessageBox.Show("An error has occured: " + ntblnk.Message);
+                    return;
+                }
+                CustomerRef++;
+                newCustomer.CustomerRef = CustomerRef;
+                window.customerlist.Add(newCustomer);
+                window.addcustomer(newCustomer);
+                // window.updateCustomerList();
+                this.Close();
             }
-            catch (Exception ntblnk)
+            else
             {
-                MessageBox.Show("An error has occured: " + ntblnk.Message);
-                return;
+
+                try
+                {
+                    customer.Name = txt_name.Text;
+                    customer.Address = txt_address.Text;
+                }
+                catch (Exception ntblnk)
+                {
+                    MessageBox.Show("An error has occured: " + ntblnk.Message);
+                    return;
+                }
+                int index = window.customerlist.FindIndex(x => x.CustomerRef == customer.CustomerRef);
+                window.customerlist[index] = customer;
+                window.updateCustomerList();
+                this.Close();
             }
-            CustomerRef++;
-            newCustomer.CustomerRef = CustomerRef;
-            window.customerlist.Add(newCustomer);
-            window.addcustomer(newCustomer);
-           // window.updateCustomerList();
-            this.Close();
+
+
         }
     }
 }

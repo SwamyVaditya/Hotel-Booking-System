@@ -24,9 +24,11 @@ namespace assessment2
         static int BookingRef = 1;
         //List to store the guests that have been added to a booking
         public List<Guest> guestlist = new List<Guest>();
-        
+        bool edit;
+        Booking booking;
         //List to store the customers 
         private List<Customer> customerlist = new List<Customer>();
+        private List<Booking> bookinglist = new List<Booking>();
         //below allows the main window to be referenced outside of the booking window method below
         private MainWindow window;
 
@@ -35,11 +37,32 @@ namespace assessment2
             InitializeComponent();
             this.window = window;
             this.customerlist = customerlist;
+            
             for (int i = 0; i < this.customerlist.Count; i++)
             {
                 booking_lv.Items.Add(this.customerlist[i].CustomerRef);
             }
         }
+
+
+        public BookingWindow(MainWindow window, Booking booking, List<Customer> customerlist)
+        {
+            InitializeComponent();
+            this.window = window;
+            edit = true;
+            this.booking = booking;
+            this.customerlist = customerlist;
+            for (int i = 0; i < this.customerlist.Count; i++)
+            {
+                booking_lv.Items.Add(this.customerlist[i].CustomerRef);
+            }
+            //booking_lv.SelectedItem = booking.CustomerRef;
+            date_arrivalDate.SelectedDate = booking.ArrivalDate;
+            date_departureDate.SelectedDate = booking.DepartureDate;
+
+
+        }
+
 
         //When the cancel button is clicked then close the program
         private void btn_cancel_Click(object sender, RoutedEventArgs e)
@@ -48,42 +71,69 @@ namespace assessment2
         }
 
 
-       
+
 
 
         //When the add booking button is clicked then set the values for the variables in the booking class
         private void btn_addbooking_Click(object sender, RoutedEventArgs e)
         {
-            Booking newbooking = new Booking();
-
-            try
+            if (!edit)
             {
-                newbooking.CustomerRef = Int32.Parse(booking_lv.SelectedItem.ToString());
-                newbooking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
-                newbooking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
-                
-                // newbooking.ListOfGuests = lv_guests.Items.Cast<Guest>().Select(i => i).ToList();
-            }
+                Booking newbooking = new Booking();
+                try
+                {
+                    newbooking.CustomerRef = Int32.Parse(booking_lv.SelectedItem.ToString());
+                    newbooking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
+                    newbooking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
 
-            catch (NullReferenceException empty)
+                    // newbooking.ListOfGuests = lv_guests.Items.Cast<Guest>().Select(i => i).ToList();
+                }
+
+                catch (NullReferenceException empty)
+                {
+                    MessageBox.Show("An error has occured: " + empty.Message);
+                    return;
+                }
+
+                catch (Exception dateNotBlank)
+                {
+                    MessageBox.Show("An error has occured: " + dateNotBlank.Message);
+                    return;
+                }
+
+                newbooking.BookingRef = BookingRef++;
+                window.bookingslist.Add(newbooking);
+                newbooking.ListOfGuests = guestlist;
+                window.addbooking(newbooking);
+                window.updateBookingList();
+
+                this.Close();
+            }
+            else
             {
-                MessageBox.Show("An error has occured: " + empty.Message);
-                return;
+                try
+                {
+                    
+                    booking.CustomerRef = Int32.Parse(booking_lv.SelectedItem.ToString());
+                    booking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
+                    booking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
+
+                    // newbooking.ListOfGuests = lv_guests.Items.Cast<Guest>().Select(i => i).ToList();
+                }
+
+                catch (NullReferenceException empty)
+                {
+                    MessageBox.Show("An error has occured: " + empty.Message);
+                    return;
+                }
+
+                catch (Exception dateNotBlank)
+                {
+                    MessageBox.Show("An error has occured: " + dateNotBlank.Message);
+                    return;
+                }
+                this.Close();
             }
-
-            catch (Exception dateNotBlank)
-            {
-                MessageBox.Show("An error has occured: " + dateNotBlank.Message);
-                return;
-            }
-
-            newbooking.BookingRef = BookingRef++;
-            window.bookingslist.Add(newbooking);
-            newbooking.ListOfGuests = guestlist;
-            window.addbooking(newbooking);
-            window.updateBookingList();
-
-            this.Close();
         }
 
         private void btn_add_Click(object sender, RoutedEventArgs e)

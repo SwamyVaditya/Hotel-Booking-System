@@ -155,9 +155,6 @@ namespace assessment2
         {
             var newWindow = new CustomerWindow(this);
             newWindow.ShowDialog();
-
-
-
         }
 
         private void btn_invoice_Click(object sender, RoutedEventArgs e)
@@ -240,16 +237,28 @@ namespace assessment2
 
         private void btn_editbooking_Click(object sender, RoutedEventArgs e)
         {
+            dynamic selected = lv_bookings.SelectedItem;
 
+            int bref = 0;
+            bref = selected.BookingRef;
+            //single instead of find
+            Booking booking = bookingslist.Single(x => x.BookingRef == bref);
+            var newWindow = new BookingWindow(this, booking, customerlist);
+            newWindow.ShowDialog();
         }
 
+        private void btn_editcustomer_Click(object sender, RoutedEventArgs e)
+        {
+            
 
+            dynamic selected = lv_Customers.SelectedItem;
 
+            int custRef = 0;
+            custRef = selected.CustomerRef;
+            Customer customer = customerlist.Single(x => x.CustomerRef == custRef);
+            var newWindow = new CustomerWindow(this, customer);
+            newWindow.ShowDialog();
 
-
-
-
-
-
+        }
     }
 }

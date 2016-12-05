@@ -1,23 +1,5 @@
 [
   {
-    "CustomerRef": 3,
-    "BookingRef": 1,
-    "ArrivalDate": "2016-12-07T00:00:00",
-    "DepartureDate": "2016-12-24T00:00:00",
-    "ListOfGuests": [
-      {
-        "name": "hector",
-        "passportNumber": "535435",
-        "age": 4
-      },
-      {
-        "name": "dimitri",
-        "passportNumber": "5435",
-        "age": 4
-      }
-    ]
-  },
-  {
     "CustomerRef": 1,
     "BookingRef": 1,
     "ArrivalDate": "2016-11-30T00:00:00",
@@ -27,6 +9,32 @@
         "name": "dimditregtet",
         "passportNumber": "34324",
         "age": 43
+      }
+    ]
+  },
+  {
+    "CustomerRef": 3,
+    "BookingRef": 1,
+    "ArrivalDate": "2016-12-06T00:00:00",
+    "DepartureDate": "2016-12-29T00:00:00",
+    "ListOfGuests": [
+      {
+        "name": "sam",
+        "passportNumber": "53454",
+        "age": 54
+      }
+    ]
+  },
+  {
+    "CustomerRef": 2,
+    "BookingRef": 2,
+    "ArrivalDate": "2016-12-06T00:00:00",
+    "DepartureDate": "2016-12-21T00:00:00",
+    "ListOfGuests": [
+      {
+        "name": "nick",
+        "passportNumber": "535435",
+        "age": 45
       }
     ]
   }
