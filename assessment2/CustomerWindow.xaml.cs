@@ -40,8 +40,8 @@ namespace assessment2
             Customer newCustomer = new Customer();
             try
             {
-                newCustomer.name = txt_name.Text;
-                newCustomer.address = txt_address.Text;
+                newCustomer.Name = txt_name.Text;
+                newCustomer.Address = txt_address.Text;
             }
             catch (Exception ntblnk)
             {
@@ -49,7 +49,7 @@ namespace assessment2
                 return;
             }
             CustomerRef++;
-            newCustomer.customerRef = CustomerRef;
+            newCustomer.CustomerRef = CustomerRef;
             window.customerlist.Add(newCustomer);
             window.addcustomer(newCustomer);
            // window.updateCustomerList();

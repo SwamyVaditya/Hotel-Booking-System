@@ -8,15 +8,15 @@ namespace assessment2
 {
     public class Customer
     {
-        private string Name;
-        private string Address;
-        private int CustomerRef;
+        private string name;
+        private string address;
+        private int customerRef;
         
-        public string name
+        public string Name
         {
             get
             {
-                return Name;
+                return name;
             }
             set
             {
@@ -24,15 +24,15 @@ namespace assessment2
                 {
                     throw new Exception("Name cannot be left blank.");
                 }
-                Name = value;
+                name = value;
             }
         }
 
-        public string address
+        public string Address
         {
             get
             {
-                return Address;
+                return address;
             }
             set
             {
@@ -40,19 +40,19 @@ namespace assessment2
                 {
                     throw new ArgumentException("Address cannot be left blank.");
                 }
-                Address = value;
+                address = value;
             }
         }
 
-        public int customerRef
+        public int CustomerRef
         {
             get
             {
-                return CustomerRef;
+                return customerRef;
             }
             set
             {
-                CustomerRef = value;
+                customerRef = value;
             }
         }
     }

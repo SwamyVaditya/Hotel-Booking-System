@@ -12,7 +12,8 @@ namespace assessment2
         private int bookingRef;
         private DateTime arrivalDate;
         private DateTime departureDate;
-        
+        private List<Guest> listOfGuests = new List<Guest>();
+
 
         public int CustomerRef
         {
@@ -57,8 +58,6 @@ namespace assessment2
 
                 arrivalDate = value;
             }
-
-
         }
 
         public DateTime DepartureDate
@@ -82,7 +81,17 @@ namespace assessment2
         }
 
 
-        
-       
+
+    public List<Guest> ListOfGuests
+        {
+            get
+            {
+                return listOfGuests;
+            }
+            set
+            {
+                listOfGuests = value;
+            }
+        } 
     }
 }

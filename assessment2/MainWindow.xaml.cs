@@ -25,7 +25,8 @@ namespace assessment2
     public partial class MainWindow : Window
     {
         public List<Customer> customerlist = new List<Customer>();
-        public ArrayList bookingslist = new ArrayList();
+        public List<Booking> bookingslist = new List<Booking>();
+        
         Customer newCustomer = new Customer();
         Booking newBooking = new Booking();
 
@@ -51,17 +52,17 @@ namespace assessment2
             gridView.Columns.Add(new GridViewColumn
             {
                 Header = "Customer Ref               ",
-                DisplayMemberBinding = new Binding("customerRef")
+                DisplayMemberBinding = new Binding("CustomerRef")
             });
             gridView.Columns.Add(new GridViewColumn
             {
                 Header = "Name                          ",
-                DisplayMemberBinding = new Binding("name")
+                DisplayMemberBinding = new Binding("Name")
             });
             gridView.Columns.Add(new GridViewColumn
             {
                 Header = "Address                      ",
-                DisplayMemberBinding = new Binding("address")
+                DisplayMemberBinding = new Binding("Address")
             });
 
 
@@ -98,39 +99,48 @@ namespace assessment2
         {
             try
             {
-                /*Customer newCustomer = File.ReadAllText(@"H:\assessment2backup\data\customers.txt");
-                foreach(Customer c in customerInformation)
-                customerlist = JsonConvert.DeserializeObject<Customer>(customerInformation);*/
-                
                 using (StreamReader file = File.OpenText(@"H:\assessment2\HotelSystemData\Customers.json"))
                 {
-
-                    //JsonSerializer serializer = new JsonSerializer();
-                    //List<Customer> newCustomerLi = (Customer)JsonConvert.DeserializeObjectList<Customer>();
                     string dataFromFile = File.ReadAllText(@"H:\assessment2\HotelSystemData\Customers.json");
                     customerlist = JsonConvert.DeserializeObject<List<Customer>>(dataFromFile);
-                    //customerlist.Add(newCustomer);
-                    foreach(Customer customer in customerlist)
+                    foreach (Customer customer in customerlist)
                     {
                         addcustomer(customer);
                     }
-                    
-                    //customerlist.Add(JsonConvert.DeserializeObject<Customer>()) ;
-
-
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
-                MessageBox.Show("There is no file to write to, one will be made when you save customer information.");
+                // MessageBox.Show("There is no file to write to, one will be made when you save customer information.");
+            }
+
+            try
+            {
+                using (StreamReader file = File.OpenText(@"H:\assessment2\HotelSystemData\Bookings.json"))
+                {
+                    string dataFromFile = File.ReadAllText(@"H:\assessment2\HotelSystemData\Bookings.json");
+                    bookingslist = JsonConvert.DeserializeObject<List<Booking>>(dataFromFile);
+                    foreach (Booking booking in bookingslist)
+                    {
+                        addbooking(booking);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
             }
         }
 
 
-        private void saveShit(List<Customer> data)
+           
+
+
+        private void saveData(List<Customer> customers, List<Booking> bookings)
         {
-            File.WriteAllText(@"H:\assessment2\HotelSystemData\Customers.json", JsonConvert.SerializeObject(data, Formatting.Indented));
+            File.WriteAllText(@"H:\assessment2\HotelSystemData\Customers.json", JsonConvert.SerializeObject(customers, Formatting.Indented));
+            File.WriteAllText(@"H:\assessment2\HotelSystemData\Bookings.json", JsonConvert.SerializeObject(bookings, Formatting.Indented));
         }
 
         private void btn_addbooking_Click(object sender, RoutedEventArgs e)
@@ -158,7 +168,7 @@ namespace assessment2
 
         private void btn_quit_Click(object sender, RoutedEventArgs e)
         {
-            saveShit(customerlist);
+            saveData(customerlist, bookingslist);
             this.Close();
         }
 
@@ -175,7 +185,7 @@ namespace assessment2
         public void addcustomer(Customer newCustomer)
         {
 
-            lv_Customers.Items.Add(new Customer { customerRef = newCustomer.customerRef, name = newCustomer.name, address = newCustomer.address });
+            lv_Customers.Items.Add(new Customer { CustomerRef = newCustomer.CustomerRef, Name = newCustomer.Name, Address = newCustomer.Address });
 
         }
 
@@ -206,9 +216,12 @@ namespace assessment2
 
         private void btn_deletebooking_Click(object sender, RoutedEventArgs e)
         {
-            var selected = lv_bookings.SelectedItem;
-            bookingslist.Remove(selected);
-            updateBookingList();
+            dynamic selected = lv_bookings.SelectedItem;
+            int bookingRef2 = 0;
+            bookingRef2 = selected.BookingRef;
+            Booking booking = bookingslist.Find(x => x.BookingRef == bookingRef2);
+            bookingslist.Remove(booking);
+            lv_bookings.Items.Remove(selected);
 
         }
 
@@ -217,34 +230,13 @@ namespace assessment2
             dynamic selected = lv_Customers.SelectedItem;
 
             int custRef = 0;
-            custRef = selected.customerRef;
-            Customer customer = customerlist.Find(x => x.customerRef == custRef);
+            custRef = selected.CustomerRef;
+            Customer customer = customerlist.Find(x => x.CustomerRef == custRef);
             customerlist.Remove(customer);
             lv_Customers.Items.Remove(selected);
-            //updateCustomerList();
+            
         }
 
-
-
-
-
-
-
-        /*  List <String> CustomerList = new List<String>(); 
-           foreach (Customer eachItem in lv_Customers.SelectedItems)
-          {
-             CustomerList.Add(eachItem);
-          }
-           foreach (String eachItem in CustomerList)
-           {
-               lv_Customers.Items.Remove(eachItem);
-           }*/
-        //lv_Customers.SelectedIndex
-        /* foreach (Customer eachitem in lv_Customers.SelectedItems)
-         {
-             lv_Customers.Items.Remove(eachitem);
-         }*/
-        //}
 
         private void btn_editbooking_Click(object sender, RoutedEventArgs e)
         {

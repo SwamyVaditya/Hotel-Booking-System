@@ -22,9 +22,10 @@ namespace assessment2
     {
         //Set Up auto increment for the booking ref
         static int BookingRef = 1;
-        //ArrayList to store the guests that have been added to a booking
-        public ArrayList guestlist = new ArrayList();
-        //ArrayList to store the customers 
+        //List to store the guests that have been added to a booking
+        public List<Guest> guestlist = new List<Guest>();
+        
+        //List to store the customers 
         private List<Customer> customerlist = new List<Customer>();
         //below allows the main window to be referenced outside of the booking window method below
         private MainWindow window;
@@ -36,7 +37,7 @@ namespace assessment2
             this.customerlist = customerlist;
             for (int i = 0; i < this.customerlist.Count; i++)
             {
-                booking_lv.Items.Add(this.customerlist[i].customerRef);
+                booking_lv.Items.Add(this.customerlist[i].CustomerRef);
             }
         }
 
@@ -45,6 +46,10 @@ namespace assessment2
         {
             this.Close();
         }
+
+
+       
+
 
         //When the add booking button is clicked then set the values for the variables in the booking class
         private void btn_addbooking_Click(object sender, RoutedEventArgs e)
@@ -56,6 +61,8 @@ namespace assessment2
                 newbooking.CustomerRef = Int32.Parse(booking_lv.SelectedItem.ToString());
                 newbooking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
                 newbooking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
+                
+                // newbooking.ListOfGuests = lv_guests.Items.Cast<Guest>().Select(i => i).ToList();
             }
 
             catch (NullReferenceException empty)
@@ -72,6 +79,7 @@ namespace assessment2
 
             newbooking.BookingRef = BookingRef++;
             window.bookingslist.Add(newbooking);
+            newbooking.ListOfGuests = guestlist;
             window.addbooking(newbooking);
             window.updateBookingList();
 
@@ -119,20 +127,23 @@ namespace assessment2
             txt_passport.Clear();
             txt_age.Clear();
             guestlist.Add(newGuest);
+            
+
             lv_guests.Items.Add(newGuest.name + " " + newGuest.passportNumber + " " + newGuest.age);
 
         }
 
+        
 
-
-        public void updateGuestList()
-        {
-            lv_guests.Items.Clear();
-            foreach (Guest g in guestlist)
-            {
-                lv_guests.Items.Add(g);
-            }
-        }
+        /*  public void updateGuestList()
+          {
+              lv_guests.Items.Clear();
+              //       foreach (Guest g in guestlist)
+              foreach (Guest g in guestlist)
+              {
+                  lv_guests.Items.Add(g);
+              }
+          }*/
 
         private void btn_delguest_Click(object sender, RoutedEventArgs e)
         {
