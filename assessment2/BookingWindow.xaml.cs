@@ -24,7 +24,11 @@ namespace assessment2
         static int BookingRef = 1;
         //List to store the guests that have been added to a booking
         public List<Guest> guestlist = new List<Guest>();
+
+        public List<Guest> listOfGuest = new List<Guest>();
+
         bool edit;
+        
         Booking booking;
         //List to store the customers 
         private List<Customer> customerlist = new List<Customer>();
@@ -59,6 +63,11 @@ namespace assessment2
             //booking_lv.SelectedItem = booking.CustomerRef;
             date_arrivalDate.SelectedDate = booking.ArrivalDate;
             date_departureDate.SelectedDate = booking.DepartureDate;
+           //load the guests for the booking into the window
+            for (int i = 0; i < booking.ListOfGuests.Count; i++)
+            {
+                lv_guests.Items.Add(booking.ListOfGuests[i].name + " " + booking.ListOfGuests[i].passportNumber + " " + booking.ListOfGuests[i].age);
+            }
 
 
         }
@@ -138,49 +147,90 @@ namespace assessment2
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-            Guest newGuest = new Guest();
+            //if (!edit)
+            //{
+                Guest newGuest = new Guest();
 
-            try
-            {
-                newGuest.name = txt_name.Text;
-            }
-            catch (Exception ntblank)
-            {
-                MessageBox.Show("An error has occured: " + ntblank.Message);
-                return;
-            }
-            try
-            {
-                newGuest.passportNumber = txt_passport.Text;
-            }
-            catch (ArgumentException blankOrTooLong)
-            {
-                MessageBox.Show("An error has occured: " + blankOrTooLong.Message);
-                return;
-            }
+                try
+                {
+                    newGuest.name = txt_name.Text;
+                }
+                catch (Exception ntblank)
+                {
+                    MessageBox.Show("An error has occured: " + ntblank.Message);
+                    return;
+                }
+                try
+                {
+                    newGuest.passportNumber = txt_passport.Text;
+                }
+                catch (ArgumentException blankOrTooLong)
+                {
+                    MessageBox.Show("An error has occured: " + blankOrTooLong.Message);
+                    return;
+                }
 
-            try
-            {
-                newGuest.age = int.Parse(txt_age.Text);
-            }
-            catch (ArgumentException outrange)
-            {
-                MessageBox.Show("An error has occured: " + outrange.Message);
-                return;
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("An error has occured: Is not a numnber");
-                return;
-            }
-            txt_name.Clear();
-            txt_passport.Clear();
-            txt_age.Clear();
-            guestlist.Add(newGuest);
-            
+                try
+                {
+                    newGuest.age = int.Parse(txt_age.Text);
+                }
+                catch (ArgumentException outrange)
+                {
+                    MessageBox.Show("An error has occured: " + outrange.Message);
+                    return;
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("An error has occured: Is not a numnber");
+                    return;
+                }
+                txt_name.Clear();
+                txt_passport.Clear();
+                txt_age.Clear();
+                guestlist.Add(newGuest);
 
-            lv_guests.Items.Add(newGuest.name + " " + newGuest.passportNumber + " " + newGuest.age);
 
+                lv_guests.Items.Add(newGuest.name + " " + newGuest.passportNumber + " " + newGuest.age);
+            //}
+            //else
+            //{
+            //    try
+            //    {
+            //        newGuest.name = txt_name.Text;
+            //    }
+            //    catch (Exception ntblank)
+            //    {
+            //        MessageBox.Show("An error has occured: " + ntblank.Message);
+            //        return;
+            //    }
+            //    try
+            //    {
+            //        newGuest.passportNumber = txt_passport.Text;
+            //    }
+            //    catch (ArgumentException blankOrTooLong)
+            //    {
+            //        MessageBox.Show("An error has occured: " + blankOrTooLong.Message);
+            //        return;
+            //    }
+
+            //    try
+            //    {
+            //        newGuest.age = int.Parse(txt_age.Text);
+            //    }
+            //    catch (ArgumentException outrange)
+            //    {
+            //        MessageBox.Show("An error has occured: " + outrange.Message);
+            //        return;
+            //    }
+            //    catch (FormatException)
+            //    {
+            //        MessageBox.Show("An error has occured: Is not a numnber");
+            //        return;
+            //    }
+            //    txt_name.Clear();
+            //    txt_passport.Clear();
+            //    txt_age.Clear();
+            //}
         }
 
         

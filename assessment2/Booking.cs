@@ -75,7 +75,8 @@ namespace assessment2
                 if (arrivalDate.Date < departureDate.Date)
                 {
                     throw new Exception("Departure Date cannot be before the arrival date.");
-                }
+                    
+                }                
                 departureDate = value;
             }
         }

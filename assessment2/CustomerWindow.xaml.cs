@@ -23,7 +23,6 @@ namespace assessment2
         static int CustomerRef;
         bool edit;
         Customer customer;
-        // private List<Customer> customerlist = new List<Customer>();
 
         public CustomerWindow(MainWindow window)
         {
