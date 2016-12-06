@@ -53,10 +53,17 @@ namespace assessment2
             {
                 if (arrivalDate == null)
                 {
-                    throw new NullReferenceException("Arrival Date cannot be left blank");
+                    //throw new NullReferenceException("Arrival Date cannot be left blank");
+                    throw new ArgumentException("Arrival Date cannot be left blank");
                 }
 
-                arrivalDate = value;
+                //if(arrivalDate==DateTime.MinValue)
+                //{
+                //    throw new ArgumentException("Arrival date must be added");
+                //}
+                //if(!arrivalDate.HasValue)
+
+                //arrivalDate = value;
             }
         }
 
@@ -72,11 +79,11 @@ namespace assessment2
                 {
                     throw new ArgumentException("Departure Date cannot be left blank");
                 }
-                if (arrivalDate.Date < departureDate.Date)
-                {
-                    throw new Exception("Departure Date cannot be before the arrival date.");
+                //if (arrivalDate.Date < departureDate.Date)
+                //{
+                //    throw new Exception("Some exception");
                     
-                }                
+                //}                
                 departureDate = value;
             }
         }
