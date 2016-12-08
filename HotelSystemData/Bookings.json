@@ -10,7 +10,8 @@
         "passportNumber": "53454",
         "age": 54
       }
-    ]
+    ],
+    "ListOfExtras": []
   },
   {
     "CustomerRef": 2,
@@ -23,6 +24,35 @@
         "passportNumber": "535435",
         "age": 45
       }
-    ]
+    ],
+    "ListOfExtras": []
+  },
+  {
+    "CustomerRef": 3,
+    "BookingRef": 3,
+    "ArrivalDate": "2016-12-07T00:00:00",
+    "DepartureDate": "2016-12-30T00:00:00",
+    "ListOfGuests": [
+      {
+        "name": "hector",
+        "passportNumber": "4555",
+        "age": 55
+      }
+    ],
+    "ListOfExtras": []
+  },
+  {
+    "CustomerRef": 2,
+    "BookingRef": 4,
+    "ArrivalDate": "2016-12-14T00:00:00",
+    "DepartureDate": "2016-12-23T00:00:00",
+    "ListOfGuests": [
+      {
+        "name": "Mr Smith",
+        "passportNumber": "535767",
+        "age": 44
+      }
+    ],
+    "ListOfExtras": []
   }
 ]

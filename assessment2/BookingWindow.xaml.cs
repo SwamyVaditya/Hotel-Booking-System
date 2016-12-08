@@ -140,6 +140,7 @@ namespace assessment2
 
             txt_name1.Clear();
             txt_dietry.Clear();
+
             
             extraslist.Add(newExtras);
 
@@ -177,6 +178,7 @@ namespace assessment2
                 window.bookingslist.Add(newbooking);
                 newbooking.ListOfGuests = guestlist;
                 window.addbooking(newbooking);
+                addExtras();
                 window.updateBookingList();
 
                 this.Close();
