@@ -1,18 +1,5 @@
 [
   {
-    "CustomerRef": 1,
-    "BookingRef": 1,
-    "ArrivalDate": "2016-11-30T00:00:00",
-    "DepartureDate": "2016-12-23T00:00:00",
-    "ListOfGuests": [
-      {
-        "name": "dimditregtet",
-        "passportNumber": "34324",
-        "age": 43
-      }
-    ]
-  },
-  {
     "CustomerRef": 3,
     "BookingRef": 1,
     "ArrivalDate": "2016-12-06T00:00:00",

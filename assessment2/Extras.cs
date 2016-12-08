@@ -9,9 +9,8 @@ namespace assessment2
     public class Extras
     {
         private bool eveningMeal;
-        private string dietryInformationEM;
+        private string dietryInformation;
         private bool breakfast;
-        private string dietryInformationB;
         private bool carHire;
         private DateTime hireStartDate;
         private DateTime hireEndDate;
@@ -30,15 +29,15 @@ namespace assessment2
             }
         }
 
-        public string DietryInformationEM
+        public string DietryInformation
         {
             get
             {
-                return dietryInformationEM;
+                return dietryInformation;
             }
             set
             {
-                dietryInformationEM = value;
+                dietryInformation = value;
             }
         }
         public bool Breakfast
@@ -53,17 +52,7 @@ namespace assessment2
             }
         }
 
-        public string DietryInformationB
-        {
-            get
-            {
-                return dietryInformationB;
-            }
-            set
-            {
-                dietryInformationB = value;
-            }
-        }
+       
 
         public bool CarHire
         {

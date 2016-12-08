@@ -24,8 +24,9 @@ namespace assessment2
         //static int BookingRef = 1;
         //List to store the guests that have been added to a booking
         public List<Guest> guestlist = new List<Guest>();
-
         public List<Guest> listOfGuest = new List<Guest>();
+
+        public List<Extras> extraslist = new List<Extras>();
 
         bool edit;
         
@@ -81,10 +82,71 @@ namespace assessment2
 
 
 
+        public void addExtras()
+        {
+            Extras newExtras = new Extras();
+
+            
+            if (chk_em.IsChecked == true)
+            {
+                newExtras.EveningMeal = true;
+            }
+            else
+            {
+                newExtras.EveningMeal = false;
+            }
+
+            if (chk_b.IsChecked == true)
+            {
+                newExtras.Breakfast = true;
+            }
+            else
+            {
+                newExtras.Breakfast = false;
+            }
+
+            if (chk_c.IsChecked == true)
+            {
+                newExtras.CarHire = true;
+            }
+            else
+            {
+                newExtras.CarHire = false;
+            }
 
 
-        //When the add booking button is clicked then set the values for the variables in the booking class
-        private void btn_addbooking_Click(object sender, RoutedEventArgs e)
+            try
+            {
+                newExtras.DietryInformation = txt_dietry.Text;
+            }
+            catch (ArgumentException blank)
+            {
+                MessageBox.Show("An error has occured: " + blank.Message);
+                return;
+            }
+
+            try
+            {
+                newExtras.Driver = txt_name1.Text;
+            }
+            catch (ArgumentException blank2)
+            {
+                MessageBox.Show("An error has occured: " + blank2.Message);
+                return;
+            }
+
+            newExtras.HireStartDate = (DateTime)hireStartDate.SelectedDate;
+            newExtras.HireEndDate = (DateTime)hireEndDate.SelectedDate;
+
+            txt_name1.Clear();
+            txt_dietry.Clear();
+            
+            extraslist.Add(newExtras);
+
+    }
+
+    //When the add booking button is clicked then set the values for the variables in the booking class
+    private void btn_addbooking_Click(object sender, RoutedEventArgs e)
         {
             if (!edit)
             {
@@ -200,16 +262,6 @@ namespace assessment2
 
         private void btn_delguest_Click(object sender, RoutedEventArgs e)
         {
-            //List<String> guestlist = new List<String>();
-            //foreach (String eachItem in lv_guests.SelectedItems)
-            //{
-            //    guestlist.Add(eachItem);
-            //}
-            //foreach (String eachItem in guestlist)
-            //{
-            //    lv_guests.Items.Remove(eachItem);
-            //}
-
             dynamic selected = lv_guests.SelectedItem;
 
             string name;

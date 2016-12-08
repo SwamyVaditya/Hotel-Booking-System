@@ -13,6 +13,7 @@ namespace assessment2
         private DateTime arrivalDate;
         private DateTime departureDate;
         private List<Guest> listOfGuests = new List<Guest>();
+        private List<Extras> listOfExtras = new List<Extras>();
 
 
         public int CustomerRef
@@ -100,6 +101,19 @@ namespace assessment2
             {
                 listOfGuests = value;
             }
-        } 
+        }
+
+        public List<Extras> ListOfExtras
+        {
+            get
+            {
+                return listOfExtras;
+            }
+            set
+            {
+                listOfExtras = value;
+            }
+        }
+
     }
 }
