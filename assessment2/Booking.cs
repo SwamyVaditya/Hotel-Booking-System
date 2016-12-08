@@ -63,7 +63,7 @@ namespace assessment2
                 //}
                 //if(!arrivalDate.HasValue)
 
-                //arrivalDate = value;
+                arrivalDate = value;
             }
         }
 

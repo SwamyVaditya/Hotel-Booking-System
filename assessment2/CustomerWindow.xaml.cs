@@ -19,8 +19,8 @@ namespace assessment2
     /// </summary>
     public partial class CustomerWindow : Window
     {
+        
         private MainWindow window;
-        static int CustomerRef;
         bool edit;
         Customer customer;
 
@@ -28,7 +28,6 @@ namespace assessment2
         {
             InitializeComponent();
             this.window = window;
-            CustomerRef = window.CustRef++;
             edit = false;
         }
         private List<Customer> customerlist = new List<Customer>();
@@ -65,8 +64,7 @@ namespace assessment2
                     MessageBox.Show("An error has occured: " + ntblnk.Message);
                     return;
                 }
-                CustomerRef++;
-                newCustomer.CustomerRef = CustomerRef;
+                newCustomer.CustomerRef = window.idFactory.GetCustomerNo();
                 window.customerlist.Add(newCustomer);
                 window.addcustomer(newCustomer);
                 // window.updateCustomerList();

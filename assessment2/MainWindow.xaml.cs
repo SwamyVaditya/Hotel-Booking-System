@@ -24,6 +24,7 @@ namespace assessment2
     /// </summary>
     public partial class MainWindow : Window
     {
+        public RefNoFactory idFactory;
         public List<Customer> customerlist = new List<Customer>();
         public List<Booking> bookingslist = new List<Booking>();
         
@@ -92,6 +93,7 @@ namespace assessment2
             });
 
             loadInformation();
+            idFactory = new RefNoFactory(this);
         }
 
 
@@ -106,6 +108,10 @@ namespace assessment2
                     foreach (Customer customer in customerlist)
                     {
                         addcustomer(customer);
+                    }
+                    foreach (Customer customer in customerlist)
+                    {
+                        System.Diagnostics.Debug.WriteLine(customer.CustomerRef);
                     }
                 }
             }
@@ -134,7 +140,14 @@ namespace assessment2
         }
 
 
-           
+        public List<Customer> GetListC()
+        {
+        return customerlist;
+        }
+        public List<Booking> GetListB()
+        {
+            return bookingslist;
+        }
 
 
         private void saveData(List<Customer> customers, List<Booking> bookings)
@@ -172,9 +185,8 @@ namespace assessment2
 
         public void addbooking(Booking newBooking)
         {
-
             lv_bookings.Items.Add(new Booking { BookingRef = newBooking.BookingRef, CustomerRef = newBooking.CustomerRef, ArrivalDate = newBooking.ArrivalDate, DepartureDate = newBooking.DepartureDate });
-
+            
         }
 
 
@@ -241,8 +253,7 @@ namespace assessment2
 
             int bref = 0;
             bref = selected.BookingRef;
-            //single instead of find
-            Booking booking = bookingslist.Single(x => x.BookingRef == bref);
+            Booking booking = bookingslist.Find(x => x.BookingRef == bref);
             var newWindow = new BookingWindow(this, booking, customerlist);
             newWindow.ShowDialog();
         }
@@ -255,7 +266,7 @@ namespace assessment2
 
             int custRef = 0;
             custRef = selected.CustomerRef;
-            Customer customer = customerlist.Single(x => x.CustomerRef == custRef);
+            Customer customer = customerlist.Find(x => x.CustomerRef == custRef);
             var newWindow = new CustomerWindow(this, customer);
             newWindow.ShowDialog();
 

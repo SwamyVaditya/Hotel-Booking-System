@@ -21,7 +21,7 @@ namespace assessment2
     public partial class BookingWindow : Window
     {
         //Set Up auto increment for the booking ref
-        static int BookingRef = 1;
+        //static int BookingRef = 1;
         //List to store the guests that have been added to a booking
         public List<Guest> guestlist = new List<Guest>();
 
@@ -60,7 +60,7 @@ namespace assessment2
             {
                 booking_lv.Items.Add(this.customerlist[i].CustomerRef);
             }
-            //booking_lv.SelectedItem = booking.CustomerRef;
+            booking_lv.SelectedItem = booking.CustomerRef;
             date_arrivalDate.SelectedDate = booking.ArrivalDate;
             date_departureDate.SelectedDate = booking.DepartureDate;
            //load the guests for the booking into the window
@@ -110,7 +110,8 @@ namespace assessment2
                     return;
                 }
 
-                newbooking.BookingRef = BookingRef++;
+
+                newbooking.BookingRef = window.idFactory.GetBookingNo();
                 window.bookingslist.Add(newbooking);
                 newbooking.ListOfGuests = guestlist;
                 window.addbooking(newbooking);
@@ -141,6 +142,9 @@ namespace assessment2
                     MessageBox.Show("An error has occured: " + dateNotBlank.Message);
                     return;
                 }
+                booking.ListOfGuests = guestlist;
+                
+                window.updateBookingList();
                 this.Close();
             }
         }
@@ -149,113 +153,72 @@ namespace assessment2
         {
             //if (!edit)
             //{
-                Guest newGuest = new Guest();
+            Guest newGuest = new Guest();
 
-                try
-                {
-                    newGuest.name = txt_name.Text;
-                }
-                catch (Exception ntblank)
-                {
-                    MessageBox.Show("An error has occured: " + ntblank.Message);
-                    return;
-                }
-                try
-                {
-                    newGuest.passportNumber = txt_passport.Text;
-                }
-                catch (ArgumentException blankOrTooLong)
-                {
-                    MessageBox.Show("An error has occured: " + blankOrTooLong.Message);
-                    return;
-                }
+            try
+            {
+                newGuest.name = txt_name.Text;
+            }
+            catch (Exception ntblank)
+            {
+                MessageBox.Show("An error has occured: " + ntblank.Message);
+                return;
+            }
+            try
+            {
+                newGuest.passportNumber = txt_passport.Text;
+            }
+            catch (ArgumentException blankOrTooLong)
+            {
+                MessageBox.Show("An error has occured: " + blankOrTooLong.Message);
+                return;
+            }
 
-                try
-                {
-                    newGuest.age = int.Parse(txt_age.Text);
-                }
-                catch (ArgumentException outrange)
-                {
-                    MessageBox.Show("An error has occured: " + outrange.Message);
-                    return;
-                }
-                catch (FormatException)
-                {
-                    MessageBox.Show("An error has occured: Is not a numnber");
-                    return;
-                }
-                txt_name.Clear();
-                txt_passport.Clear();
-                txt_age.Clear();
-                guestlist.Add(newGuest);
+            try
+            {
+                newGuest.age = int.Parse(txt_age.Text);
+            }
+            catch (ArgumentException outrange)
+            {
+                MessageBox.Show("An error has occured: " + outrange.Message);
+                return;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("An error has occured: Is not a numnber");
+                return;
+            }
+            txt_name.Clear();
+            txt_passport.Clear();
+            txt_age.Clear();
+            guestlist.Add(newGuest);
 
 
-                lv_guests.Items.Add(newGuest.name + " " + newGuest.passportNumber + " " + newGuest.age);
-            //}
-            //else
-            //{
-            //    try
-            //    {
-            //        newGuest.name = txt_name.Text;
-            //    }
-            //    catch (Exception ntblank)
-            //    {
-            //        MessageBox.Show("An error has occured: " + ntblank.Message);
-            //        return;
-            //    }
-            //    try
-            //    {
-            //        newGuest.passportNumber = txt_passport.Text;
-            //    }
-            //    catch (ArgumentException blankOrTooLong)
-            //    {
-            //        MessageBox.Show("An error has occured: " + blankOrTooLong.Message);
-            //        return;
-            //    }
-
-            //    try
-            //    {
-            //        newGuest.age = int.Parse(txt_age.Text);
-            //    }
-            //    catch (ArgumentException outrange)
-            //    {
-            //        MessageBox.Show("An error has occured: " + outrange.Message);
-            //        return;
-            //    }
-            //    catch (FormatException)
-            //    {
-            //        MessageBox.Show("An error has occured: Is not a numnber");
-            //        return;
-            //    }
-            //    txt_name.Clear();
-            //    txt_passport.Clear();
-            //    txt_age.Clear();
-            //}
+            lv_guests.Items.Add(newGuest.name + " " + newGuest.passportNumber + " " + newGuest.age);
         }
-
-        
-
-        /*  public void updateGuestList()
-          {
-              lv_guests.Items.Clear();
-              //       foreach (Guest g in guestlist)
-              foreach (Guest g in guestlist)
-              {
-                  lv_guests.Items.Add(g);
-              }
-          }*/
+  
 
         private void btn_delguest_Click(object sender, RoutedEventArgs e)
         {
-            List<String> guestlist = new List<String>();
-            foreach (String eachItem in lv_guests.SelectedItems)
-            {
-                guestlist.Add(eachItem);
-            }
-            foreach (String eachItem in guestlist)
-            {
-                lv_guests.Items.Remove(eachItem);
-            }
+            //List<String> guestlist = new List<String>();
+            //foreach (String eachItem in lv_guests.SelectedItems)
+            //{
+            //    guestlist.Add(eachItem);
+            //}
+            //foreach (String eachItem in guestlist)
+            //{
+            //    lv_guests.Items.Remove(eachItem);
+            //}
+
+            dynamic selected = lv_guests.SelectedItem;
+
+            string name;
+            name = selected;
+            Guest newGuest = guestlist.Find(x => x.name == name);
+            guestlist.Remove(newGuest);
+            lv_guests.Items.Remove(selected);
+
+
         }
 
     }
