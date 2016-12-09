@@ -73,40 +73,39 @@ namespace assessment2
                 lv_guests.Items.Add(booking.ListOfGuests[i].name + " " + booking.ListOfGuests[i].passportNumber + " " + booking.ListOfGuests[i].age);
             }
 
+            
+                if (booking.ListOfExtras[0].EveningMeal == true)
+                {
+                    chk_em.IsChecked = true;
+                }
+                else
+                {
+                    chk_em.IsChecked = false;
+                }
+                if (booking.ListOfExtras[0].Breakfast == true)
+                {
+                    chk_b.IsChecked = true;
+                }
+                else
+                {
+                    chk_b.IsChecked = false;
+                }
+                if (booking.ListOfExtras[0].CarHire == true)
+                {
+                    chk_c.IsChecked = true;
+                    txt_name1.Text = booking.ListOfExtras[0].Driver;
+                    hireStartDate.SelectedDate = booking.ListOfExtras[0].HireStartDate;
+                    hireEndDate.SelectedDate = booking.ListOfExtras[0].HireEndDate;
+                }
+                else
+                {
+                    chk_c.IsChecked = false;
+                }
 
-
-            if (booking.ListOfExtras[0].EveningMeal == true)
-            {
-                chk_em.IsChecked = true;   
-            }
-            else
-            {
-                chk_em.IsChecked = false;
-            }
-            if (booking.ListOfExtras[0].Breakfast == true)
-            {
-                chk_b.IsChecked = true;
-            }
-            else
-            {
-                chk_b.IsChecked = false;
-            }
-            if (booking.ListOfExtras[0].CarHire == true)
-            {
-                chk_c.IsChecked = true;
-                txt_name1.Text = booking.ListOfExtras[0].Driver;
-                hireStartDate.SelectedDate = booking.ListOfExtras[0].HireStartDate;
-                hireEndDate.SelectedDate = booking.ListOfExtras[0].HireEndDate;
-            }
-            else
-            {
-                chk_c.IsChecked = false;
-            }
-
-            if(booking.ListOfExtras[0].EveningMeal == true || booking.ListOfExtras[0].Breakfast == true)
-            {
-                txt_dietry.Text = booking.ListOfExtras[0].DietryInformation;
-            }
+                if (booking.ListOfExtras[0].EveningMeal == true || booking.ListOfExtras[0].Breakfast == true)
+                {
+                    txt_dietry.Text = booking.ListOfExtras[0].DietryInformation;
+                }
             
             
 
@@ -199,7 +198,7 @@ namespace assessment2
 
 
             error = false;
-            newBooking.ListOfExtras.Add(newExtras);
+            newBooking.ListOfExtras.Insert(0,newExtras);
             //txt_name1.Clear();
             //txt_dietry.Clear();
 
@@ -253,6 +252,7 @@ namespace assessment2
            
                 if (error == false)
                 {
+                    
                     window.addbooking(newbooking);
                     window.updateBookingList();
                     
@@ -285,12 +285,13 @@ namespace assessment2
                     MessageBox.Show("An error has occured: " + dateNotBlank.Message);
                     return;
                 }
+                
                 booking.ListOfGuests = guestlist;
+                
                 addExtras(booking);
                 if (error == false)
                 {
-                    //  booking.ListOfExtras = elist;
-                    //window.addbooking(booking);
+                    
                     window.updateBookingList();
                     this.Close();
                 }
