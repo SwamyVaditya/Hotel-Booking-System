@@ -10,11 +10,10 @@ namespace assessment2
     {
         private int customerRef;
         private int bookingRef;
-        private DateTime arrivalDate;
+        private DateTime arrivalDate = DateTime.Now;
         private DateTime departureDate;
         private List<Guest> listOfGuests = new List<Guest>();
         private List<Extras> listOfExtras = new List<Extras>();
-
 
         public int CustomerRef
         {
@@ -52,18 +51,10 @@ namespace assessment2
             }
             set
             {
-                if (arrivalDate == null)
+                if (value == null)
                 {
-                    //throw new NullReferenceException("Arrival Date cannot be left blank");
-                    throw new ArgumentException("Arrival Date cannot be left blank");
+                    throw new NullReferenceException("Arrival Date cannot be left blank");
                 }
-
-                //if(arrivalDate==DateTime.MinValue)
-                //{
-                //    throw new ArgumentException("Arrival date must be added");
-                //}
-                //if(!arrivalDate.HasValue)
-
                 arrivalDate = value;
             }
         }
@@ -76,9 +67,9 @@ namespace assessment2
             }
             set
             {
-                if (departureDate == null)
+                if (value == null)
                 {
-                    throw new ArgumentException("Departure Date cannot be left blank");
+                    throw new NullReferenceException("Departure Date cannot be left blank");
                 }
                 //if (arrivalDate.Date < departureDate.Date)
                 //{

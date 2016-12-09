@@ -27,7 +27,7 @@ namespace assessment2
 
             if (window.bookingslist.Count != 0)
             {
-                bookingNo = window.GetListB().Last().CustomerRef + 1;
+                bookingNo = window.GetListB().Last().BookingRef + 1;
             }
         }
 

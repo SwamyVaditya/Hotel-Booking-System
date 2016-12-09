@@ -250,7 +250,12 @@ namespace assessment2
         private void btn_editbooking_Click(object sender, RoutedEventArgs e)
         {
             dynamic selected = lv_bookings.SelectedItem;
-
+            if (selected == null)
+            {
+                MessageBox.Show("You haven't selected a booking to edit.");
+                return;  
+            }
+            
             int bref = 0;
             bref = selected.BookingRef;
             Booking booking = bookingslist.Find(x => x.BookingRef == bref);
@@ -263,7 +268,11 @@ namespace assessment2
             
 
             dynamic selected = lv_Customers.SelectedItem;
-
+            if (selected == null)
+            {
+                MessageBox.Show("You haven't selected a customer to edit.");
+                return;
+            }
             int custRef = 0;
             custRef = selected.CustomerRef;
             Customer customer = customerlist.Find(x => x.CustomerRef == custRef);

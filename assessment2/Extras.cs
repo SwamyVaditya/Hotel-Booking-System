@@ -74,6 +74,10 @@ namespace assessment2
             }
             set
             {
+                if (value == null)
+                {
+                    throw new NullReferenceException("Start Date cannot be left blank");
+                }
                 hireStartDate = value;
             }
         }
@@ -85,6 +89,10 @@ namespace assessment2
             }
             set
             {
+                if (value == null)
+                {
+                    throw new NullReferenceException("End Date cannot be left blank");
+                }
                 hireEndDate = value;
             }
         }
@@ -96,6 +104,10 @@ namespace assessment2
             }
             set
             {
+                if (String.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new ArgumentException("You must enter a driver name.");
+                }
                 driver = value;
             }
         }

@@ -28,6 +28,7 @@ namespace assessment2
 
         public List<Extras> elist = new List<Extras>();
         public List<Extras> listOfExtras = new List<Extras>();
+        public bool error = false;
         
 
         bool edit;
@@ -93,17 +94,21 @@ namespace assessment2
             if (booking.ListOfExtras[0].CarHire == true)
             {
                 chk_c.IsChecked = true;
+                txt_name1.Text = booking.ListOfExtras[0].Driver;
+                hireStartDate.SelectedDate = booking.ListOfExtras[0].HireStartDate;
+                hireEndDate.SelectedDate = booking.ListOfExtras[0].HireEndDate;
             }
             else
             {
                 chk_c.IsChecked = false;
             }
 
+            if(booking.ListOfExtras[0].EveningMeal == true || booking.ListOfExtras[0].Breakfast == true)
+            {
+                txt_dietry.Text = booking.ListOfExtras[0].DietryInformation;
+            }
             
-            txt_dietry.Text = booking.ListOfExtras[0].DietryInformation;
-            txt_name1.Text = booking.ListOfExtras[0].Driver;
-            hireStartDate.SelectedDate = booking.ListOfExtras[0].HireStartDate;
-            hireEndDate.SelectedDate = booking.ListOfExtras[0].HireEndDate;
+            
 
         }
 
@@ -116,7 +121,7 @@ namespace assessment2
 
 
 
-        public void addExtras()
+        public void addExtras(Booking newBooking)
         {
             Extras newExtras = new Extras();
 
@@ -156,24 +161,47 @@ namespace assessment2
             catch (ArgumentException blank)
             {
                 MessageBox.Show("An error has occured: " + blank.Message);
+                error = true;
                 return;
+            }       
+            if (newExtras.CarHire == true)
+            {
+                
+                try
+                {
+                    newExtras.Driver = txt_name1.Text;
+                    if (hireStartDate.SelectedDate >= DateTime.Today)
+                    {
+                        newExtras.HireStartDate = (DateTime)hireStartDate.SelectedDate;
+                    }
+                    else
+                    {
+                        throw new ArgumentException("The start date of the Car Hire is invalid.");
+                    }
+                    if (hireEndDate.SelectedDate >= DateTime.Today)
+                    {
+                        newExtras.HireEndDate = (DateTime)hireStartDate.SelectedDate;
+                    }
+                    else
+                    {
+                        throw new ArgumentException("The end date of the Car Hire is invalid.");
+                    }
+                }
+
+                catch (Exception dateNotBlank)
+                {
+                    MessageBox.Show("An error has occured: " + dateNotBlank.Message);
+                    error = true;
+                    return;
+                }
+               
             }
 
-            try
-            {
-                newExtras.Driver = txt_name1.Text;
-            }
-            catch (ArgumentException blank2)
-            {
-                MessageBox.Show("An error has occured: " + blank2.Message);
-                return;
-            }
 
-            newExtras.HireStartDate = (DateTime)hireStartDate.SelectedDate;
-            newExtras.HireEndDate = (DateTime)hireEndDate.SelectedDate;
-            elist.Add(newExtras);
-            txt_name1.Clear();
-            txt_dietry.Clear();
+            error = false;
+            newBooking.ListOfExtras.Add(newExtras);
+            //txt_name1.Clear();
+            //txt_dietry.Clear();
 
             
             
@@ -189,16 +217,24 @@ namespace assessment2
                 try
                 {
                     newbooking.CustomerRef = Int32.Parse(booking_lv.SelectedItem.ToString());
-                    newbooking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
-                    newbooking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
+                    if (date_arrivalDate.SelectedDate >= DateTime.Today)
+                    {
+                        newbooking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
+                    } else
+                    {
+                        throw new ArgumentException("The arrival date is invalid");
+                    }
+
+                    if (date_departureDate.SelectedDate > newbooking.ArrivalDate)
+                    {
+                        newbooking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
+                    }
+                    else
+                    {
+                        throw new ArgumentException("The depature date has to be after the arrival date");
+                    }
 
                     // newbooking.ListOfGuests = lv_guests.Items.Cast<Guest>().Select(i => i).ToList();
-                }
-
-                catch (NullReferenceException empty)
-                {
-                    MessageBox.Show("An error has occured: " + empty.Message);
-                    return;
                 }
 
                 catch (Exception dateNotBlank)
@@ -208,20 +244,26 @@ namespace assessment2
                 }
 
 
-                newbooking.BookingRef = window.idFactory.GetBookingNo();
+                newbooking.BookingRef = window.idFactory.GetBookingNumber();
                 window.bookingslist.Add(newbooking);
                 newbooking.ListOfGuests = guestlist;
-                addExtras();
-                newbooking.ListOfExtras = elist;
+                addExtras(newbooking);
                 
-                window.addbooking(newbooking);
-                
-                window.updateBookingList();
 
-                this.Close();
+           
+                if (error == false)
+                {
+                    window.addbooking(newbooking);
+                    window.updateBookingList();
+                    
+                    this.Close();
+                }
+
             }
             else
             {
+               
+                
                 try
                 {
                     
@@ -244,11 +286,14 @@ namespace assessment2
                     return;
                 }
                 booking.ListOfGuests = guestlist;
-                addExtras();
-                booking.ListOfExtras = elist;
-                
-                window.updateBookingList();
-                this.Close();
+                addExtras(booking);
+                if (error == false)
+                {
+                    //  booking.ListOfExtras = elist;
+                    //window.addbooking(booking);
+                    window.updateBookingList();
+                    this.Close();
+                }
             }
         }
 
