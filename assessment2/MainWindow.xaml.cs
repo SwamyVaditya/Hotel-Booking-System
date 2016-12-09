@@ -172,7 +172,12 @@ namespace assessment2
 
         private void btn_invoice_Click(object sender, RoutedEventArgs e)
         {
-            var newWindow = new Invoice();
+            dynamic selected = lv_bookings.SelectedItem;
+
+            int BookingRef;
+            BookingRef = selected.BookingRef;
+            Booking newBooking = bookingslist.Find(x => x.BookingRef == BookingRef);
+            var newWindow = new Invoice(newBooking);
             newWindow.ShowDialog();
         }
 
