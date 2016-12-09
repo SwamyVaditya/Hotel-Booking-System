@@ -24,8 +24,6 @@ namespace assessment2
     /// </summary>
     public partial class BookingWindow : Window
     {
-        //Set Up auto increment for the booking ref
-        //static int BookingRef = 1;
         //List to store the guests that have been added to a booking
         public List<Guest> guestlist = new List<Guest>();
         public List<Guest> listOfGuest = new List<Guest>();
@@ -121,8 +119,8 @@ namespace assessment2
         //add the extras to the booking
         public void addExtras(Booking newBooking)
         {
-            //
             Extras newExtras = new Extras();
+            //if check boxes are checked then set the boolean to true, otherwise false
             if (chk_em.IsChecked == true)
             {
                 newExtras.EveningMeal = true;
@@ -149,8 +147,7 @@ namespace assessment2
             {
                 newExtras.CarHire = false;
             }
-
-
+            //set the dietry information
             try
             {
                 newExtras.DietryInformation = txt_dietry.Text;
@@ -160,7 +157,8 @@ namespace assessment2
                 MessageBox.Show("An error has occured: " + blank.Message);
                 error = true;
                 return;
-            }       
+            }   
+            //set the car hire details if the user has opted to hire a car
             if (newExtras.CarHire == true)
             {
                 
@@ -190,27 +188,23 @@ namespace assessment2
                     MessageBox.Show("An error has occured: " + dateNotBlank.Message);
                     error = true;
                     return;
-                }
-               
+                }     
             }
-
-
+            //There were no errors as the code made it this far
             error = false;
+            //addd the new details regarding the extras to the list of extras
             newBooking.ListOfExtras.Insert(0,newExtras);
-            //txt_name1.Clear();
-            //txt_dietry.Clear();
-
-            
-            
-
     }
 
-    //When the add booking button is clicked then set the values for the variables in the booking class
+    //When the add booking button is clicked 
     private void btn_addbooking_Click(object sender, RoutedEventArgs e)
         {
+            //if the user is adding a booking, as opposed to editing one  
             if (!edit)
             {
+                //create a new booking
                 Booking newbooking = new Booking();
+                //set the appropriate values
                 try
                 {
                     newbooking.CustomerRef = Int32.Parse(booking_lv.SelectedItem.ToString());
@@ -230,76 +224,75 @@ namespace assessment2
                     {
                         throw new ArgumentException("The depature date has to be after the arrival date");
                     }
-
-                    // newbooking.ListOfGuests = lv_guests.Items.Cast<Guest>().Select(i => i).ToList();
                 }
-
                 catch (Exception dateNotBlank)
                 {
                     MessageBox.Show("An error has occured: " + dateNotBlank.Message);
                     return;
                 }
-
-
+                //call the method get booking number thats stored in the factory 
                 newbooking.BookingRef = window.idFactory.GetBookingNumber();
+                //add booking to the booking list 
                 window.bookingslist.Add(newbooking);
+                //add the guests to the guest list 
                 newbooking.ListOfGuests = guestlist;
+                //call the add extras method 
                 addExtras(newbooking);
-                
-
-           
+                //if no errors call the addbooking method and add to the booking list
                 if (error == false)
-                {
-                    
+                { 
                     window.addbooking(newbooking);
-                    window.updateBookingList();
-                    
+                    window.updateBookingList();   
                     this.Close();
                 }
-
             }
+            //otherwise user is editing the booking
             else
             {
-               
-                
+                //set the appropriate values
                 try
                 {
-                    
                     booking.CustomerRef = Int32.Parse(booking_lv.SelectedItem.ToString());
-                    booking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
-                    booking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
-
-                    // newbooking.ListOfGuests = lv_guests.Items.Cast<Guest>().Select(i => i).ToList();
+                    if (date_arrivalDate.SelectedDate >= DateTime.Today)
+                    {
+                        booking.ArrivalDate = (DateTime)date_arrivalDate.SelectedDate;
+                    }
+                    else
+                    {
+                        throw new ArgumentException("The arrival date is invalid");
+                    }
+                    if (date_departureDate.SelectedDate > booking.ArrivalDate)
+                    {
+                        booking.DepartureDate = (DateTime)date_departureDate.SelectedDate;
+                    }
+                    else
+                    {
+                        throw new ArgumentException("The depature date has to be after the arrival date");
+                    }
                 }
-
-                catch (NullReferenceException empty)
-                {
-                    MessageBox.Show("An error has occured: " + empty.Message);
-                    return;
-                }
-
                 catch (Exception dateNotBlank)
                 {
                     MessageBox.Show("An error has occured: " + dateNotBlank.Message);
                     return;
                 }
-                
+                //set the list of guests to the guestlist
                 booking.ListOfGuests = guestlist;
-                
                 addExtras(booking);
+                //if no errors call the addbooking method and add to the booking list
                 if (error == false)
                 {
-                    
                     window.updateBookingList();
                     this.Close();
                 }
             }
         }
 
+        //when the add guest button is clicked
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
+            //create a new booking
             Guest newGuest = new Guest();
-
+            //set the appropriate values
             try
             {
                 newGuest.name = txt_name.Text;
@@ -318,7 +311,6 @@ namespace assessment2
                 MessageBox.Show("An error has occured: " + blankOrTooLong.Message);
                 return;
             }
-
             try
             {
                 newGuest.age = int.Parse(txt_age.Text);
@@ -333,19 +325,22 @@ namespace assessment2
                 MessageBox.Show("An error has occured: Is not a numnber");
                 return;
             }
+            //clear the textboxes
             txt_name.Clear();
             txt_passport.Clear();
             txt_age.Clear();
+            //add new guest to the guestlist
             guestlist.Add(newGuest);
-
-
+            //add new guest to the listview
             lv_guests.Items.Add(newGuest.name + " " + newGuest.passportNumber + " " + newGuest.age);
         }
   
-
+        //when the delete guest button pressed
         private void btn_delguest_Click(object sender, RoutedEventArgs e)
         {
+            //delete the selected guest
             dynamic selected = lv_guests.SelectedItem;
+            //if no guest selected then display an error message
             if (selected == null)
             {
                 MessageBox.Show("You haven't selected a guest to delete.");
@@ -354,11 +349,9 @@ namespace assessment2
             string name;
             name = selected;
             Guest newGuest = guestlist.Find(x => x.name == name);
+            //remove from the list and the listview
             guestlist.Remove(newGuest);
             lv_guests.Items.Remove(selected);
-
-
         }
-
     }
 }
