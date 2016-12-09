@@ -13,5 +13,15 @@
     "Name": "dimitri",
     "Address": "dimitris house",
     "CustomerRef": 3
+  },
+  {
+    "Name": "Simon",
+    "Address": "Edinburgh Napier",
+    "CustomerRef": 4
+  },
+  {
+    "Name": "Neil",
+    "Address": "Urquhart Household",
+    "CustomerRef": 5
   }
 ]

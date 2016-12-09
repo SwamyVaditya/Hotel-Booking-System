@@ -26,7 +26,7 @@ namespace assessment2
             double Nights = (booking.DepartureDate-booking.ArrivalDate).TotalDays;
             int ratePerNight = 0;
             double extrasCost = 0;
-            double costPerNight = 0;
+            double costNoExtras = 0;
             double hireDays = (booking.ListOfExtras[0].HireEndDate - booking.ListOfExtras[0].HireStartDate).TotalDays;
 
             if (booking.ListOfExtras[0].CarHire == true)
@@ -49,7 +49,7 @@ namespace assessment2
                 }
 
                 double CostPerPerson = Nights * ratePerNight;
-                costPerNight += CostPerPerson;
+                costNoExtras += CostPerPerson;
                 if (booking.ListOfExtras[0].EveningMeal == true)
                 {
                     extrasCost = extrasCost + 15 * Nights;
@@ -59,9 +59,9 @@ namespace assessment2
                     extrasCost = extrasCost + 5 * Nights;
                 }
             }
-            CostPerNight.Content = "£" + costPerNight;
+            CostPerNight.Content = "£" + costNoExtras / Nights;
             CostOfExtras.Content = "£" + extrasCost;
-            TotalCost.Content = "£" + (costPerNight + extrasCost);
+            TotalCost.Content = "£" + (costNoExtras + extrasCost);
         }
     }
 }

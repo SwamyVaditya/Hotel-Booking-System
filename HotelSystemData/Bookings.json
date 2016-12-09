@@ -2,52 +2,30 @@
   {
     "CustomerRef": 3,
     "BookingRef": 1,
-    "ArrivalDate": "2016-12-06T00:00:00",
-    "DepartureDate": "2016-12-29T00:00:00",
-    "ListOfGuests": [
-      {
-        "name": "sam",
-        "passportNumber": "53454",
-        "age": 54
-      }
-    ],
-    "ListOfExtras": []
-  },
-  {
-    "CustomerRef": 3,
-    "BookingRef": 2,
-    "ArrivalDate": "2016-12-07T00:00:00",
-    "DepartureDate": "2016-12-31T00:00:00",
-    "ListOfGuests": [
-      {
-        "name": "Dr Iver",
-        "passportNumber": "5436",
-        "age": 76
-      }
-    ],
-    "ListOfExtras": []
-  },
-  {
-    "CustomerRef": 3,
-    "BookingRef": 3,
-    "ArrivalDate": "2016-12-07T00:00:00",
-    "DepartureDate": "2016-12-30T00:00:00",
-    "ListOfGuests": [
-      {
-        "name": "rob",
-        "passportNumber": "53435",
-        "age": 43
-      }
-    ],
-    "ListOfExtras": []
-  },
-  {
-    "CustomerRef": 3,
-    "BookingRef": 4,
     "ArrivalDate": "2016-12-14T00:00:00",
     "DepartureDate": "2016-12-31T00:00:00",
-    "ListOfGuests": [],
+    "ListOfGuests": [
+      {
+        "name": "Dimitri",
+        "passportNumber": "742983",
+        "age": 19
+      },
+      {
+        "name": "Dimitra",
+        "passportNumber": "734388",
+        "age": 23
+      }
+    ],
     "ListOfExtras": [
+      {
+        "EveningMeal": true,
+        "DietryInformation": "2 gluten free",
+        "Breakfast": true,
+        "CarHire": true,
+        "HireStartDate": "2016-12-12T00:00:00",
+        "HireEndDate": "2016-12-12T00:00:00",
+        "Driver": "Dimitri"
+      },
       {
         "EveningMeal": true,
         "DietryInformation": "gluten free",
@@ -56,6 +34,93 @@
         "HireStartDate": "2016-12-12T00:00:00",
         "HireEndDate": "2016-12-20T00:00:00",
         "Driver": "david"
+      }
+    ]
+  },
+  {
+    "CustomerRef": 2,
+    "BookingRef": 2,
+    "ArrivalDate": "2017-01-06T00:00:00",
+    "DepartureDate": "2017-01-11T00:00:00",
+    "ListOfGuests": [
+      {
+        "name": "Neil",
+        "passportNumber": "84683",
+        "age": 30
+      }
+    ],
+    "ListOfExtras": [
+      {
+        "EveningMeal": true,
+        "DietryInformation": "",
+        "Breakfast": false,
+        "CarHire": true,
+        "HireStartDate": "2017-01-07T00:00:00",
+        "HireEndDate": "2017-01-07T00:00:00",
+        "Driver": "Neil"
+      }
+    ]
+  },
+  {
+    "CustomerRef": 1,
+    "BookingRef": 5,
+    "ArrivalDate": "2016-12-22T00:00:00",
+    "DepartureDate": "2017-01-05T00:00:00",
+    "ListOfGuests": [
+      {
+        "name": "Hector",
+        "passportNumber": "743985",
+        "age": 19
+      },
+      {
+        "name": "Erin",
+        "passportNumber": "93498",
+        "age": 20
+      },
+      {
+        "name": "Pat",
+        "passportNumber": "645832",
+        "age": 49
+      }
+    ],
+    "ListOfExtras": [
+      {
+        "EveningMeal": true,
+        "DietryInformation": "2 vegetarian",
+        "Breakfast": true,
+        "CarHire": true,
+        "HireStartDate": "0001-01-01T00:00:00",
+        "HireEndDate": "0001-01-01T00:00:00",
+        "Driver": "Erin"
+      }
+    ]
+  },
+  {
+    "CustomerRef": 4,
+    "BookingRef": 6,
+    "ArrivalDate": "2017-01-13T00:00:00",
+    "DepartureDate": "2017-01-16T00:00:00",
+    "ListOfGuests": [
+      {
+        "name": "Mr S Powers",
+        "passportNumber": "658954",
+        "age": 26
+      },
+      {
+        "name": "Mrs Powers",
+        "passportNumber": "456654",
+        "age": 25
+      }
+    ],
+    "ListOfExtras": [
+      {
+        "EveningMeal": false,
+        "DietryInformation": "1 vegan",
+        "Breakfast": true,
+        "CarHire": true,
+        "HireStartDate": "2017-01-13T00:00:00",
+        "HireEndDate": "2017-01-13T00:00:00",
+        "Driver": "Mr S Powers"
       }
     ]
   }

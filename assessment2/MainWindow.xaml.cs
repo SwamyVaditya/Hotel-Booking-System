@@ -16,6 +16,10 @@ using System.Windows.Shapes;
 using System.IO;
 using Newtonsoft.Json;
 
+//David Gibson
+//This class stores all the controls for the main GUI window.
+//I also load and save the data to and from the JSON files in this class.
+//09/12/2016
 
 namespace assessment2
 {
@@ -31,20 +35,20 @@ namespace assessment2
         Customer newCustomer = new Customer();
         Booking newBooking = new Booking();
 
-        private int customerReference;
+        //private int customerReference;
 
 
-        public int CustRef
-        {
-            get
-            {
-                return customerReference;
-            }
-            set
-            {
-                customerReference = value;
-            }
-        }
+        //public int CustRef
+        //{
+        //    get
+        //    {
+        //        return customerReference;
+        //    }
+        //    set
+        //    {
+        //        customerReference = value;
+        //    }
+        //}
         public MainWindow()
         {
             InitializeComponent();
