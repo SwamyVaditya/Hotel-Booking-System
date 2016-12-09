@@ -62,40 +62,6 @@
     ]
   },
   {
-    "CustomerRef": 1,
-    "BookingRef": 5,
-    "ArrivalDate": "2016-12-22T00:00:00",
-    "DepartureDate": "2017-01-05T00:00:00",
-    "ListOfGuests": [
-      {
-        "name": "Hector",
-        "passportNumber": "743985",
-        "age": 19
-      },
-      {
-        "name": "Erin",
-        "passportNumber": "93498",
-        "age": 20
-      },
-      {
-        "name": "Pat",
-        "passportNumber": "645832",
-        "age": 49
-      }
-    ],
-    "ListOfExtras": [
-      {
-        "EveningMeal": true,
-        "DietryInformation": "2 vegetarian",
-        "Breakfast": true,
-        "CarHire": true,
-        "HireStartDate": "0001-01-01T00:00:00",
-        "HireEndDate": "0001-01-01T00:00:00",
-        "Driver": "Erin"
-      }
-    ]
-  },
-  {
     "CustomerRef": 4,
     "BookingRef": 6,
     "ArrivalDate": "2017-01-13T00:00:00",

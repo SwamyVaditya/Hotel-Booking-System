@@ -13,6 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+//David Gibson
+//This class takes care of adding and editing the bookings.
+//09/12/2016
+
 namespace assessment2
 {
     /// <summary>
@@ -25,17 +29,16 @@ namespace assessment2
         //List to store the guests that have been added to a booking
         public List<Guest> guestlist = new List<Guest>();
         public List<Guest> listOfGuest = new List<Guest>();
-
+        //List to store the extras that have been added to a booking
         public List<Extras> elist = new List<Extras>();
         public List<Extras> listOfExtras = new List<Extras>();
         public bool error = false;
-        
-
         bool edit;
-        
+        //declare booking as a type booking
         Booking booking;
         //List to store the customers 
         private List<Customer> customerlist = new List<Customer>();
+        //list to store booking
         private List<Booking> bookinglist = new List<Booking>();
         //below allows the main window to be referenced outside of the booking window method below
         private MainWindow window;
@@ -45,13 +48,12 @@ namespace assessment2
             InitializeComponent();
             this.window = window;
             this.customerlist = customerlist;
-            
+            //add all items customer references the customer list into the list view
             for (int i = 0; i < this.customerlist.Count; i++)
             {
                 booking_lv.Items.Add(this.customerlist[i].CustomerRef);
             }
         }
-
 
         public BookingWindow(MainWindow window, Booking booking, List<Customer> customerlist)
         {
@@ -60,10 +62,12 @@ namespace assessment2
             edit = true;
             this.booking = booking;
             this.customerlist = customerlist;
+            //add all items customer references the customer list into the list view
             for (int i = 0; i < this.customerlist.Count; i++)
             {
                 booking_lv.Items.Add(this.customerlist[i].CustomerRef);
             }
+            //set the appropriate values
             booking_lv.SelectedItem = booking.CustomerRef;
             date_arrivalDate.SelectedDate = booking.ArrivalDate;
             date_departureDate.SelectedDate = booking.DepartureDate;
@@ -72,8 +76,7 @@ namespace assessment2
             {
                 lv_guests.Items.Add(booking.ListOfGuests[i].name + " " + booking.ListOfGuests[i].passportNumber + " " + booking.ListOfGuests[i].age);
             }
-
-            
+                //load the values from the lists into the Gui controls as required
                 if (booking.ListOfExtras[0].EveningMeal == true)
                 {
                     chk_em.IsChecked = true;
@@ -101,14 +104,10 @@ namespace assessment2
                 {
                     chk_c.IsChecked = false;
                 }
-
                 if (booking.ListOfExtras[0].EveningMeal == true || booking.ListOfExtras[0].Breakfast == true)
                 {
                     txt_dietry.Text = booking.ListOfExtras[0].DietryInformation;
                 }
-            
-            
-
         }
 
 
@@ -119,12 +118,11 @@ namespace assessment2
         }
 
 
-
+        //add the extras to the booking
         public void addExtras(Booking newBooking)
         {
+            //
             Extras newExtras = new Extras();
-
-            
             if (chk_em.IsChecked == true)
             {
                 newExtras.EveningMeal = true;
@@ -300,8 +298,6 @@ namespace assessment2
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-            //if (!edit)
-            //{
             Guest newGuest = new Guest();
 
             try
