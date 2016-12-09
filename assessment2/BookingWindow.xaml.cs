@@ -26,7 +26,9 @@ namespace assessment2
         public List<Guest> guestlist = new List<Guest>();
         public List<Guest> listOfGuest = new List<Guest>();
 
-        public List<Extras> extraslist = new List<Extras>();
+        public List<Extras> elist = new List<Extras>();
+        public List<Extras> listOfExtras = new List<Extras>();
+        
 
         bool edit;
         
@@ -70,6 +72,38 @@ namespace assessment2
                 lv_guests.Items.Add(booking.ListOfGuests[i].name + " " + booking.ListOfGuests[i].passportNumber + " " + booking.ListOfGuests[i].age);
             }
 
+
+
+            if (booking.ListOfExtras[0].EveningMeal == true)
+            {
+                chk_em.IsChecked = true;   
+            }
+            else
+            {
+                chk_em.IsChecked = false;
+            }
+            if (booking.ListOfExtras[0].Breakfast == true)
+            {
+                chk_b.IsChecked = true;
+            }
+            else
+            {
+                chk_b.IsChecked = false;
+            }
+            if (booking.ListOfExtras[0].CarHire == true)
+            {
+                chk_c.IsChecked = true;
+            }
+            else
+            {
+                chk_c.IsChecked = false;
+            }
+
+            
+            txt_dietry.Text = booking.ListOfExtras[0].DietryInformation;
+            txt_name1.Text = booking.ListOfExtras[0].Driver;
+            hireStartDate.SelectedDate = booking.ListOfExtras[0].HireStartDate;
+            hireEndDate.SelectedDate = booking.ListOfExtras[0].HireEndDate;
 
         }
 
@@ -137,12 +171,12 @@ namespace assessment2
 
             newExtras.HireStartDate = (DateTime)hireStartDate.SelectedDate;
             newExtras.HireEndDate = (DateTime)hireEndDate.SelectedDate;
-
+            elist.Add(newExtras);
             txt_name1.Clear();
             txt_dietry.Clear();
 
             
-            extraslist.Add(newExtras);
+            
 
     }
 
@@ -177,8 +211,11 @@ namespace assessment2
                 newbooking.BookingRef = window.idFactory.GetBookingNo();
                 window.bookingslist.Add(newbooking);
                 newbooking.ListOfGuests = guestlist;
-                window.addbooking(newbooking);
                 addExtras();
+                newbooking.ListOfExtras = elist;
+                
+                window.addbooking(newbooking);
+                
                 window.updateBookingList();
 
                 this.Close();
@@ -207,6 +244,8 @@ namespace assessment2
                     return;
                 }
                 booking.ListOfGuests = guestlist;
+                addExtras();
+                booking.ListOfExtras = elist;
                 
                 window.updateBookingList();
                 this.Close();

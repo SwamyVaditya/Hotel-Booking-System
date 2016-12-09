@@ -14,15 +14,15 @@
     "ListOfExtras": []
   },
   {
-    "CustomerRef": 2,
+    "CustomerRef": 3,
     "BookingRef": 2,
-    "ArrivalDate": "2016-12-06T00:00:00",
-    "DepartureDate": "2016-12-21T00:00:00",
+    "ArrivalDate": "2016-12-07T00:00:00",
+    "DepartureDate": "2016-12-31T00:00:00",
     "ListOfGuests": [
       {
-        "name": "nick",
-        "passportNumber": "535435",
-        "age": 45
+        "name": "Dr Iver",
+        "passportNumber": "5436",
+        "age": 76
       }
     ],
     "ListOfExtras": []
@@ -34,25 +34,29 @@
     "DepartureDate": "2016-12-30T00:00:00",
     "ListOfGuests": [
       {
-        "name": "hector",
-        "passportNumber": "4555",
-        "age": 55
+        "name": "rob",
+        "passportNumber": "53435",
+        "age": 43
       }
     ],
     "ListOfExtras": []
   },
   {
-    "CustomerRef": 2,
+    "CustomerRef": 3,
     "BookingRef": 4,
     "ArrivalDate": "2016-12-14T00:00:00",
-    "DepartureDate": "2016-12-23T00:00:00",
-    "ListOfGuests": [
+    "DepartureDate": "2016-12-31T00:00:00",
+    "ListOfGuests": [],
+    "ListOfExtras": [
       {
-        "name": "Mr Smith",
-        "passportNumber": "535767",
-        "age": 44
+        "EveningMeal": true,
+        "DietryInformation": "gluten free",
+        "Breakfast": true,
+        "CarHire": true,
+        "HireStartDate": "2016-12-12T00:00:00",
+        "HireEndDate": "2016-12-20T00:00:00",
+        "Driver": "david"
       }
-    ],
-    "ListOfExtras": []
+    ]
   }
 ]
