@@ -350,7 +350,11 @@ namespace assessment2
         private void btn_delguest_Click(object sender, RoutedEventArgs e)
         {
             dynamic selected = lv_guests.SelectedItem;
-
+            if (selected == null)
+            {
+                MessageBox.Show("You haven't selected a guest to delete.");
+                return;
+            }
             string name;
             name = selected;
             Guest newGuest = guestlist.Find(x => x.name == name);
