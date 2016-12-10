@@ -111,6 +111,92 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="8e55ad39-fc0b-45f6-a44e-e40288ffa0ae" name="Extras" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="eddf3816-c60b-4d6d-8633-4639c0eaef6d" />
+        <ownedAttributesInternal>
+          <property Id="61f25b5e-b564-486c-ac21-e746f9977c9e" name="eveningMeal" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1ddcfaee-30d2-4da8-9265-38b437fdea4a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8853b694-677d-41c7-8aaf-bf9c18350486" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="9cc966a6-472a-4659-8841-a7c210bcf610" name="dietryInformation" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a24bc77c-06d2-4c80-aa8c-475f7d671019" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5293313c-e359-4e07-b997-c7e4e524f4b8" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="cd06e3a6-0b23-400e-aef2-b05079466264" name="breakfast" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cc233b85-9009-4060-a627-ee94c8eff287" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8853b694-677d-41c7-8aaf-bf9c18350486" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="0d323303-1f6e-430f-a650-38b0370edf94" name="carHire" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5feaf626-020d-4f17-83e5-30a0ec7f223f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8853b694-677d-41c7-8aaf-bf9c18350486" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="11f9f168-2c7c-4742-b198-c0e7e36723ba" name="hireStartDate" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3a79064f-1ac3-43c9-a0bb-4f3bfaef1a92" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="df90341e-075a-40a5-9de6-f4276420ace7" LastKnownName="DateTime" />
+            </type_NamedElement>
+          </property>
+          <property Id="aab1498d-0c29-4bf8-92e8-d1a99a1f2528" name="hireEndDate" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a3e58883-e520-491d-91af-524dbbf39961" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="df90341e-075a-40a5-9de6-f4276420ace7" LastKnownName="DateTime" />
+            </type_NamedElement>
+          </property>
+          <property Id="10602f5d-a858-4063-baf2-6ca95969030e" name="driver" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="729bc836-41fa-400f-8c5b-59bb92f911c3" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5293313c-e359-4e07-b997-c7e4e524f4b8" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="fc5cb044-49f7-407b-91fa-67477b52d3b9" name="Breakfast" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1ec6d2b4-bbf1-4baf-8b71-55baed02f867" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8853b694-677d-41c7-8aaf-bf9c18350486" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="801e2446-b7e1-44c5-a5f1-86169d655851" name="CarHire" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d34da5b3-5263-43d9-ba75-51ff606345ce" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8853b694-677d-41c7-8aaf-bf9c18350486" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="c9aba6db-8649-48fc-ac6b-5096e8f061ef" name="DietryInformation" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="550d62d0-ca02-435f-87cd-3a225c4a7e76" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5293313c-e359-4e07-b997-c7e4e524f4b8" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="19e61ce0-f565-4604-be21-82375e5a1698" name="Driver" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="53dea085-d9a1-4055-88a2-1c124b81220b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5293313c-e359-4e07-b997-c7e4e524f4b8" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="694cb8cb-ab90-46f9-8952-0b233d6dbafc" name="EveningMeal" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b5472ae1-c172-4c0b-96ce-23c5769dd628" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8853b694-677d-41c7-8aaf-bf9c18350486" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="8041245b-5245-4cde-8181-4855c42b881f" name="HireStartDate" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f98bb3df-e9d3-414d-ab22-2399251d8452" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="df90341e-075a-40a5-9de6-f4276420ace7" LastKnownName="DateTime" />
+            </type_NamedElement>
+          </property>
+          <property Id="18871c8a-3a84-4e71-af18-29d4e36e8257" name="HireEndDate" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2a9883d9-7590-44a3-be1a-dc44c76848e9" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="df90341e-075a-40a5-9de6-f4276420ace7" LastKnownName="DateTime" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -284,6 +370,16 @@
     <packageHasNamedElement>
       <referencedType Id="f33c9850-2c76-4c4e-b885-a1b5b7f9f031" name="List&lt;Extras&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Extras&gt;">
         <elementDefinition Id="0a90f5f5-0155-49a8-be9c-c2bc63c8434e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8853b694-677d-41c7-8aaf-bf9c18350486" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="481700db-0711-431e-afb4-31e1323fd638" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5293313c-e359-4e07-b997-c7e4e524f4b8" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="e59c2890-a51c-42a3-9531-7240397650fc" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
