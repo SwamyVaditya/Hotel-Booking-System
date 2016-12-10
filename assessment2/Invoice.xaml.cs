@@ -26,7 +26,7 @@ namespace assessment2
         {
             InitializeComponent();
             //declare variables to hold information about the booking costs and time stayed/used extras
-            double Nights = (booking.DepartureDate-booking.ArrivalDate).TotalDays;
+            double Nights = (booking.DepartureDate - booking.ArrivalDate).TotalDays;
             int ratePerNight = 0;
             double extrasCost = 0;
             double costNoExtras = 0;
@@ -40,7 +40,7 @@ namespace assessment2
             //for every guest that is a part of booking
             foreach (Guest g in booking.ListOfGuests)
             {
-                if (g.Age>18)
+                if (g.Age > 18)
                 {
                     //if the guest is over 18 then set the appropriate rate
                     ratePerNight = 50;

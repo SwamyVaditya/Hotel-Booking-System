@@ -59,7 +59,7 @@ namespace assessment2
             }
         }
 
-       
+
 
         public bool CarHire
         {

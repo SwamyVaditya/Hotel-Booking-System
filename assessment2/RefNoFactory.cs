@@ -66,8 +66,5 @@ namespace assessment2
             bookingNo++;
             return newBookingNo;
         }
-
-
-       
     }
 }

@@ -81,16 +81,16 @@ namespace assessment2
                 if (value == null)
                 {
                     throw new NullReferenceException("Departure Date cannot be left blank");
-                }               
+                }
                 departureDate = value;
             }
         }
 
 
 
-    public List<Guest> ListOfGuests
+        public List<Guest> ListOfGuests
         {
-        //get and set listofguests 
+            //get and set listofguests 
             get
             {
                 return listOfGuests;

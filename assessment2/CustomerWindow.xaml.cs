@@ -51,13 +51,13 @@ namespace assessment2
             txt_address.Text = customer.Address;
         }
 
-        
+
         //when the cancel button is clicked then close the customer window 
         private void btn_Cancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-       
+
         //if the add customer button is clicked 
         private void btn_addCustomer_Click(object sender, RoutedEventArgs e)
         {

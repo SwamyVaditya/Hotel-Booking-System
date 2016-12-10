@@ -32,7 +32,7 @@ namespace assessment2
         public RefNoFactory idFactory;
         public List<Customer> customerlist = new List<Customer>();
         public List<Booking> bookingslist = new List<Booking>();
-        
+
         //declare instances of booking and customer
         Customer newCustomer = new Customer();
         Booking newBooking = new Booking();
@@ -134,7 +134,7 @@ namespace assessment2
         //Factory uses this method to return the customer list 
         public List<Customer> GetListC()
         {
-        return customerlist;
+            return customerlist;
         }
         //Factory uses this method to return the bookings list 
         public List<Booking> GetListB()
@@ -193,7 +193,7 @@ namespace assessment2
         public void addbooking(Booking newBooking)
         {
             lv_bookings.Items.Add(new Booking { BookingRef = newBooking.BookingRef, CustomerRef = newBooking.CustomerRef, ArrivalDate = newBooking.ArrivalDate, DepartureDate = newBooking.DepartureDate });
-            
+
         }
 
         //Add customer into the listview
@@ -261,7 +261,7 @@ namespace assessment2
             Customer customer = customerlist.Find(x => x.CustomerRef == custRef);
             customerlist.Remove(customer);
             lv_Customers.Items.Remove(selected);
-            
+
         }
 
         //edit the chosen booking
@@ -272,9 +272,9 @@ namespace assessment2
             if (selected == null)
             {
                 MessageBox.Show("You haven't selected a booking to edit.");
-                return;  
+                return;
             }
-            
+
             int bref = 0;
             bref = selected.BookingRef;
             Booking booking = bookingslist.Find(x => x.BookingRef == bref);
