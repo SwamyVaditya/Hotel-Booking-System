@@ -40,7 +40,7 @@ namespace assessment2
             //for every guest that is a part of booking
             foreach (Guest g in booking.ListOfGuests)
             {
-                if (g.age>18)
+                if (g.Age>18)
                 {
                     //if the guest is over 18 then set the appropriate rate
                     ratePerNight = 50;

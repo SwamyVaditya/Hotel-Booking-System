@@ -9,31 +9,11 @@ using System.Threading.Tasks;
 //09/12/2016
 namespace assessment2
 {
-    public class Customer
+    public class Customer : Person
     {
         //create private variables for storing working user data
-        private string name;
         private string address;
         private int customerRef;
-        
-        public string Name
-        {
-            //get and set name 
-            get
-            {
-                return name;
-            }
-            set
-            {
-                //validation for the name 
-                if (String.IsNullOrEmpty(value))
-                {
-                    throw new Exception("Name cannot be left blank.");
-                }
-                name = value;
-            }
-        }
-
         public string Address
         {
             //get and set address

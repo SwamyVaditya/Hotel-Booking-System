@@ -900,6 +900,14 @@
         Id="e59c2890-a51c-42a3-9531-7240397650fc"
         name="string" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e488cdbe-7087-4fa8-89e2-ec67a3fd97d1"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

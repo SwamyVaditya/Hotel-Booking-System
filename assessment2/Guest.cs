@@ -11,19 +11,19 @@ using System.Threading.Tasks;
 
 namespace assessment2
 {
-    public class Guest
+    public class Guest 
     {
         //private variables to store working data
-        private string Name;
-        private string PassportNumber;
-        private int Age;
+        private string name;
+        private string passportNumber;
+        private int age;
         
-        public string name
+        public string Name
         {
             //get and set the name 
             get
             {
-                return Name;
+                return name;
             }
             set
             {
@@ -32,16 +32,16 @@ namespace assessment2
                 {
                     throw new ArgumentException("Name cannot be left blank.");
                 }
-                Name = value;
+                name = value;
             }
         }
 
-        public string passportNumber
+        public string PassportNumber
         {
             //get and set the passport number
             get
             {
-                return PassportNumber;
+                return passportNumber;
             }
             set
             {
@@ -55,16 +55,16 @@ namespace assessment2
                     
                     throw new ArgumentException("Passport number cannot be less than 10 characters.");
                 }
-                PassportNumber = value;
+                passportNumber = value;
             }
         }
 
-        public int age
+        public int Age
         {
             //get and set the age
             get
             {
-                return Age;
+                return age;
             }
             set
             {
@@ -73,7 +73,7 @@ namespace assessment2
                 {
                     throw new ArgumentException("Guest age must be within the specified range (0-101 Years old)");
                 }
-                Age = value;
+                age = value;
             }
         }
     

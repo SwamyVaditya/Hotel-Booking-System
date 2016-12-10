@@ -77,6 +77,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Extras.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="RefNoFactory.cs" />
     <Page Include="BookingWindow.xaml">
       <SubType>Designer</SubType>

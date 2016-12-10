@@ -72,7 +72,7 @@ namespace assessment2
            //load the guests for the booking into the window
             for (int i = 0; i < booking.ListOfGuests.Count; i++)
             {
-                lv_guests.Items.Add(booking.ListOfGuests[i].name + " " + booking.ListOfGuests[i].passportNumber + " " + booking.ListOfGuests[i].age);
+                lv_guests.Items.Add(booking.ListOfGuests[i].Name + " " + booking.ListOfGuests[i].PassportNumber + " " + booking.ListOfGuests[i].Age);
             }
                 //load the values from the lists into the Gui controls as required
                 if (booking.ListOfExtras[0].EveningMeal == true)
@@ -295,7 +295,7 @@ namespace assessment2
             //set the appropriate values
             try
             {
-                newGuest.name = txt_name.Text;
+                newGuest.Name = txt_name.Text;
             }
             catch (Exception ntblank)
             {
@@ -304,7 +304,7 @@ namespace assessment2
             }
             try
             {
-                newGuest.passportNumber = txt_passport.Text;
+                newGuest.PassportNumber = txt_passport.Text;
             }
             catch (ArgumentException blankOrTooLong)
             {
@@ -313,7 +313,7 @@ namespace assessment2
             }
             try
             {
-                newGuest.age = int.Parse(txt_age.Text);
+                newGuest.Age = int.Parse(txt_age.Text);
             }
             catch (ArgumentException outrange)
             {
@@ -332,7 +332,7 @@ namespace assessment2
             //add new guest to the guestlist
             guestlist.Add(newGuest);
             //add new guest to the listview
-            lv_guests.Items.Add(newGuest.name + " " + newGuest.passportNumber + " " + newGuest.age);
+            lv_guests.Items.Add(newGuest.Name + " " + newGuest.PassportNumber + " " + newGuest.Age);
         }
   
         //when the delete guest button pressed
@@ -348,7 +348,7 @@ namespace assessment2
             }
             string name;
             name = selected;
-            Guest newGuest = guestlist.Find(x => x.name == name);
+            Guest newGuest = guestlist.Find(x => x.Name == name);
             //remove from the list and the listview
             guestlist.Remove(newGuest);
             lv_guests.Items.Remove(selected);

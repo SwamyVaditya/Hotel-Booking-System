@@ -382,6 +382,11 @@
         <elementDefinition Id="e59c2890-a51c-42a3-9531-7240397650fc" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="872df382-e4a4-4b3c-a51c-1cec48961aa4" name="Class1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e488cdbe-7087-4fa8-89e2-ec67a3fd97d1" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="ed6da01d-671f-4776-8a27-f4971a3e8f11" name="classDiagram">
     <elementDefinition Id="cdf177c5-76aa-4911-a964-00e5f1d062d9" />
