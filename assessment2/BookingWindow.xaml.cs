@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 //David Gibson
 //This class takes care of adding and editing the bookings.
+//This class is part of the RefNoFactory.
 //09/12/2016
 
 namespace assessment2
