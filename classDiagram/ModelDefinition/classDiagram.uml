@@ -5,7 +5,13 @@
   name="classDiagram" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <ownedCommentsInternal>
     <comment
-      Id="14b1d2c7-4d6c-4598-b203-bc3838f32b30" />
+      Id="14b1d2c7-4d6c-4598-b203-bc3838f32b30">
+      <body>RefNoFactory information:
+
+The CustomerWindow and the BookingWindow are dependent on it.
+
+I use the factory for the customerRef and the bookingRef.</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
@@ -104,7 +110,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c0c14035-2ae4-4654-9f37-67b297c0eeaf"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="19111a29-7a18-40cf-aa4c-7dab4685c064"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -137,6 +156,97 @@
                 <memberEnd
                   Id="3522e1b5-3848-4198-8475-4aea976ad9e2"
                   name="Customer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="478afc19-0af6-4b99-b6ae-e91f22dde1be"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="827d2b93-4a58-4bae-b96c-a04ddaf6dc23"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="448a54f3-4679-495a-96d0-ce9417c5a333"
+            isDerived="false"
+            sourceEndRoleName="MainWindow"
+            targetEndRoleName="CustomerWindow"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="f30fe536-8316-493c-a2fe-3d4726aecf7e"
+              LastKnownName="CustomerWindow"
+              LastKnownLocation="classDiagram.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e44891b1-8aef-4ffc-a0c4-dffc34a5ab91"
+                  name="MainWindow"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3690d900-0fff-48df-8dd9-4b7700dc5acd"
+                  name="CustomerWindow"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="d0f291b5-8135-432e-b21a-8ca50fdf8288"
+            isDerived="false"
+            sourceEndRoleName="MainWindow"
+            targetEndRoleName="BookingWindow"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4e94392b-d93d-4140-9fb2-1d48d06ca2e0"
+              LastKnownName="BookingWindow"
+              LastKnownLocation="classDiagram.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2396ba55-755d-49b4-b6f7-968e2ab804b1"
+                  name="MainWindow"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c0a889c6-4590-4767-bced-f0911ad7fbbe"
+                  name="BookingWindow"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -545,7 +655,20 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="5b85c45d-b705-467b-8aca-0d238e0af3fb"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="3a09ae11-19b0-4040-8c18-d14b33d91a04"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -1047,6 +1170,15 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="931a48e5-db0d-4300-9fa7-71e6efa3f86d">
+            <classMoniker
+              Id="c7005c20-59ab-45cc-b9e9-5a0af3f02610"
+              LastKnownName="RefNoFactory"
+              LastKnownLocation="classDiagram.uml" />
+          </dependency>
+        </suppliersInternal>
         <ownedAttributesInternal>
           <property
             Id="c2f8615d-f023-4d1a-8120-967e10ae9afe"
@@ -1120,7 +1252,107 @@
                 LastKnownLocation="classDiagram.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="3b69f4f4-356a-4c81-a0c5-f38fd7263741"
+            name="error"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="481700db-0711-431e-afb4-31e1323fd638"
+                LastKnownName="bool"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0bbb23b1-5f87-4864-aac4-d48d9288b4da"
+            name="edit"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="481700db-0711-431e-afb4-31e1323fd638"
+                LastKnownName="bool"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b1598c61-0b2a-4a76-bc6b-bad4a66d8c61"
+            name="customerlist"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="36320e24-0eb7-4af1-b111-c0494e592736"
+                LastKnownName="List&lt;Customer&gt;"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9bc182d2-f436-4aa7-89d7-0d4d52094710"
+            name="bookingslist"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="2897c7ca-a499-4d9d-be88-ff1b0e58954c"
+                LastKnownName="List&lt;Booking&gt;"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="128ad09e-1344-4906-af30-041d8bddaa3c"
+            name="addExtras"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7237554e-a5e1-4054-b11e-9b5bb0688cb6"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="a6f55c11-9a89-4a8d-8ba9-e54e5d87980c"
+                      LastKnownName="Booking"
+                      LastKnownLocation="classDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1129,7 +1361,37 @@
         name="CustomerWindow"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="3e78be9b-fda7-407b-826c-59deb04ca38c">
+            <classMoniker
+              Id="c7005c20-59ab-45cc-b9e9-5a0af3f02610"
+              LastKnownName="RefNoFactory"
+              LastKnownLocation="classDiagram.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="e49d3d58-4f6d-409a-955e-399df6711fbc"
+            name="edit"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="481700db-0711-431e-afb4-31e1323fd638"
+                LastKnownName="bool"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <undefinedType

@@ -31,7 +31,7 @@ namespace assessment2
         public List<Extras> elist = new List<Extras>();
         public List<Extras> listOfExtras = new List<Extras>();
         public bool error = false;
-        bool edit;
+        public bool edit;
         //declare booking as a type booking
         Booking booking;
         //List to store the customers 
