@@ -821,7 +821,94 @@
         name="Customer"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="4a9df4cb-5677-456c-9f82-75db53c3a120"
+            isSubstitutable="false">
+            <classMoniker
+              Id="e488cdbe-7087-4fa8-89e2-ec67a3fd97d1"
+              LastKnownName="Person"
+              LastKnownLocation="classDiagram.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="00d2aef7-106f-41f2-a35e-ae1a548658c0"
+            name="address"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e59c2890-a51c-42a3-9531-7240397650fc"
+                LastKnownName="string"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="968ab3c9-de9a-4769-960a-1bfeab108a95"
+            name="customerRef"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e8c2265e-6046-462b-87b4-b5f610257829"
+                LastKnownName="int"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d9987f63-947b-40d4-89a9-d1985f592367"
+            name="Address"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e59c2890-a51c-42a3-9531-7240397650fc"
+                LastKnownName="string"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="cf20568c-162a-4b5d-9aac-471d482dc950"
+            name="CustomerRef"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e8c2265e-6046-462b-87b4-b5f610257829"
+                LastKnownName="int"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -829,7 +916,121 @@
         name="Guest"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="3a6eb799-f297-41d0-91ce-9b5a0030073f"
+            name="name"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e59c2890-a51c-42a3-9531-7240397650fc"
+                LastKnownName="string"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="84ceb656-a947-4616-923e-1ff43ae05d72"
+            name="passportNumber"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e59c2890-a51c-42a3-9531-7240397650fc"
+                LastKnownName="string"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="86184488-e802-47ad-aff0-b1f6ce9c2d90"
+            name="age"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e8c2265e-6046-462b-87b4-b5f610257829"
+                LastKnownName="int"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="10422f9a-ddf5-4149-9d15-0ea1b751ffbf"
+            name="Age"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e8c2265e-6046-462b-87b4-b5f610257829"
+                LastKnownName="int"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="7ded67bb-d26a-413d-837f-6e719b405b71"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e59c2890-a51c-42a3-9531-7240397650fc"
+                LastKnownName="string"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e257cfb5-1065-4809-ba09-1b1161b97a6a"
+            name="PassportNumber"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e59c2890-a51c-42a3-9531-7240397650fc"
+                LastKnownName="string"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -845,7 +1046,82 @@
         name="BookingWindow"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="c2f8615d-f023-4d1a-8120-967e10ae9afe"
+            name="guestlist"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="9dd903a1-e352-4197-b772-98638ceae083"
+                LastKnownName="List&lt;Guest&gt;"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c3760063-279a-472a-94e4-48397b6470f7"
+            name="listOfGuest"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="9dd903a1-e352-4197-b772-98638ceae083"
+                LastKnownName="List&lt;Guest&gt;"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="00c1c2f4-b5bb-476e-965b-2f20a4f662ef"
+            name="elist"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="0a90f5f5-0155-49a8-be9c-c2bc63c8434e"
+                LastKnownName="List&lt;Extras&gt;"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="94bdf73a-6d9d-45ea-9b00-87c129adc51b"
+            name="listOfExtras"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="0a90f5f5-0155-49a8-be9c-c2bc63c8434e"
+                LastKnownName="List&lt;Extras&gt;"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -903,10 +1179,50 @@
     <packageHasNamedElement>
       <class
         Id="e488cdbe-7087-4fa8-89e2-ec67a3fd97d1"
-        name="Class1"
+        name="Person"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="f3ba3076-6703-468e-9805-ab6793e5bcc8"
+            name="name"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e59c2890-a51c-42a3-9531-7240397650fc"
+                LastKnownName="string"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d464f77a-bdb1-44e2-9692-188febfb2603"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e59c2890-a51c-42a3-9531-7240397650fc"
+                LastKnownName="string"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

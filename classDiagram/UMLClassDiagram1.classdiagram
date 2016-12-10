@@ -315,11 +315,81 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="1d39cfd5-a950-47b0-8200-de9954b557d1" name="Customer" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="328e7917-59c3-46bc-a8d6-a708b218f7e4" />
+        <generalsInternal>
+          <generalization Id="ce59c88b-797d-472f-83d5-a1caad61c496" isSubstitutable="false">
+            <classMoniker Id="872df382-e4a4-4b3c-a51c-1cec48961aa4" LastKnownName="Person" />
+            <elementDefinition Id="4a9df4cb-5677-456c-9f82-75db53c3a120" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="a70cde64-3168-447a-9dc8-6af505ecd602" name="address" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="00d2aef7-106f-41f2-a35e-ae1a548658c0" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5293313c-e359-4e07-b997-c7e4e524f4b8" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="9cff713b-d947-4e17-bf19-d8b7d496eda5" name="customerRef" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="968ab3c9-de9a-4769-960a-1bfeab108a95" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e4a2f2b7-4483-45f6-9fc3-f446bb6849e0" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="1d05868e-4606-4495-9f49-9da78ea8d124" name="Address" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d9987f63-947b-40d4-89a9-d1985f592367" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5293313c-e359-4e07-b997-c7e4e524f4b8" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="a3628da4-8685-48f8-b5f8-d2b8fc7714a2" name="CustomerRef" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cf20568c-162a-4b5d-9aac-471d482dc950" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e4a2f2b7-4483-45f6-9fc3-f446bb6849e0" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="fed037b2-a313-4cae-ad43-ef0cb6347e57" name="Guest" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="de221ae2-6462-4a2d-a6db-ecb0fa493cca" />
+        <ownedAttributesInternal>
+          <property Id="498d957f-67b7-47a7-8501-87c983a67f07" name="name" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3a6eb799-f297-41d0-91ce-9b5a0030073f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5293313c-e359-4e07-b997-c7e4e524f4b8" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="dd3f3447-a7aa-4305-a159-5b719590122b" name="passportNumber" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="84ceb656-a947-4616-923e-1ff43ae05d72" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="3cfbefd5-4716-431e-9ec4-730ef38eea5f" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="6ff9bb2b-91a4-4de2-8171-7f6a30ab3917" name="age" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="86184488-e802-47ad-aff0-b1f6ce9c2d90" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e4a2f2b7-4483-45f6-9fc3-f446bb6849e0" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="147527c7-33c3-4500-b463-08e823672cca" name="Age" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="10422f9a-ddf5-4149-9d15-0ea1b751ffbf" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e4a2f2b7-4483-45f6-9fc3-f446bb6849e0" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="2b5e7acd-b6fa-42f2-99c7-250b0b71feef" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7ded67bb-d26a-413d-837f-6e719b405b71" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5293313c-e359-4e07-b997-c7e4e524f4b8" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="b9fc9086-b7d8-4a37-88c5-7b0a10f49ff2" name="PassportNumber" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e257cfb5-1065-4809-ba09-1b1161b97a6a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5293313c-e359-4e07-b997-c7e4e524f4b8" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -330,6 +400,32 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="6c202189-fa94-4648-aaf8-8a8519600f35" name="BookingWindow" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="4e94392b-d93d-4140-9fb2-1d48d06ca2e0" />
+        <ownedAttributesInternal>
+          <property Id="e3a81f6c-b3d9-4dfc-95f6-bd9d7e2f4b58" name="guestlist" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c2f8615d-f023-4d1a-8120-967e10ae9afe" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="914ff3fd-a5dc-498c-acb9-702a3efbf298" LastKnownName="List&lt;Guest&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="8ad03613-170b-4c74-8f18-eaae9ac3e5ea" name="listOfGuest" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c3760063-279a-472a-94e4-48397b6470f7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="914ff3fd-a5dc-498c-acb9-702a3efbf298" LastKnownName="List&lt;Guest&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="defdaf9b-8dc9-4be4-a74c-c98480508842" name="elist" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="00c1c2f4-b5bb-476e-965b-2f20a4f662ef" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f33c9850-2c76-4c4e-b885-a1b5b7f9f031" LastKnownName="List&lt;Extras&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="c30cf6f1-b721-4cfd-8540-b2cef30cbca4" name="listOfExtras" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="94bdf73a-6d9d-45ea-9b00-87c129adc51b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="57a47e1f-468b-44ff-9c12-d6d13150c74b" LastKnownName="List&lt;Extras&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -383,10 +479,34 @@
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="872df382-e4a4-4b3c-a51c-1cec48961aa4" name="Class1" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="872df382-e4a4-4b3c-a51c-1cec48961aa4" name="Person" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="e488cdbe-7087-4fa8-89e2-ec67a3fd97d1" />
+        <ownedAttributesInternal>
+          <property Id="e950ec2f-005e-4df8-a39a-6c9a9c487775" name="name" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f3ba3076-6703-468e-9805-ab6793e5bcc8" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5293313c-e359-4e07-b997-c7e4e524f4b8" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="1d4b28df-7ad5-40a9-8bcb-a38c455b6c27" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d464f77a-bdb1-44e2-9692-188febfb2603" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5293313c-e359-4e07-b997-c7e4e524f4b8" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="3cfbefd5-4716-431e-9ec4-730ef38eea5f" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="e59c2890-a51c-42a3-9531-7240397650fc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="57a47e1f-468b-44ff-9c12-d6d13150c74b" name="List&lt;Extras&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Extras&gt;">
+        <elementDefinition Id="0a90f5f5-0155-49a8-be9c-c2bc63c8434e" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="ed6da01d-671f-4776-8a27-f4971a3e8f11" name="classDiagram">
     <elementDefinition Id="cdf177c5-76aa-4911-a964-00e5f1d062d9" />
