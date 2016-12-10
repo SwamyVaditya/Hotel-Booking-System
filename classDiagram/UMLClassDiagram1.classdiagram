@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b28151de-be3b-4f77-aac8-6cdd5c321693" name="UMLClassDiagram1" linkedPackageId="ed6da01d-671f-4776-8a27-f4971a3e8f11" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="5d25a1be-f370-41b5-b87e-213e323573fd">
+      <elementDefinition Id="14b1d2c7-4d6c-4598-b203-bc3838f32b30" />
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances Id="feb2496e-7c5a-4a44-8686-0ac9404b90a8">
       <profileInstance Id="996c4a3b-3731-46a5-bc7e-554fd411d559" name="StandardProfileL2">
@@ -78,16 +83,24 @@
           <property Id="eab7433b-1b21-4ade-86b1-2726010b3d60" name="customerlist" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="aa82a21a-3a0c-46c7-8481-b8b874f8dae9" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="250e9a95-ec8b-4d2d-8ec0-49ec20e0ddd9" LastKnownName="List" />
+              <referencedTypeMoniker Id="cbe59b62-64da-4ea7-88b3-93ee4e254e76" LastKnownName="List&lt;Customer&gt;" />
             </type_NamedElement>
           </property>
           <property Id="b3450262-46ee-49b2-acac-59e79db274b3" name="bookingslist" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="065ed0d1-316a-4583-bbfc-28b8eb2da8f9" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="250e9a95-ec8b-4d2d-8ec0-49ec20e0ddd9" LastKnownName="List" />
+              <referencedTypeMoniker Id="1405da07-3bfb-40a2-a0ee-e12268f97a92" LastKnownName="List&lt;Booking&gt;" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="63a21ee2-3c0c-4bd9-93bb-70000987c8b3" name="GetListC : List" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c9a165a6-8025-4eb7-a717-34e0d492e716" />
+          </operation>
+          <operation Id="fa222207-3210-4d5f-ae30-6f18506e6d50" name="GetListB : List" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="28e30736-b3d0-47a9-ab03-faceef899805" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -103,45 +116,119 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="136225e8-0f19-4d81-8b80-b49188aa87ad" name="Booking" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="a6f55c11-9a89-4a8d-8ba9-e54e5d87980c" />
+        <targetEnds>
+          <association Id="0ba5e840-6ee8-4dae-ba22-834865e7eb53" isDerived="false" sourceEndRoleName="Booking" targetEndRoleName="Guest" isLeaf="false" isAbstract="false">
+            <classMoniker Id="fed037b2-a313-4cae-ad43-ef0cb6347e57" LastKnownName="Guest" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4379f85b-dc52-48aa-b4f5-b593e35cf253" name="Booking" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e9f4001d-1edb-45d0-b9b9-c977f4e60853" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f47764cf-f387-4765-ae3b-9f861742f2c9" name="Guest" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3eff349f-cc14-47d3-bd46-65aa33205263" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="93648e37-51c3-4508-9638-9783bcf0f230" />
+          </association>
+          <association Id="c432f52e-9686-4e63-a3a0-dd95f5860e75" isDerived="false" sourceEndRoleName="Booking" targetEndRoleName="Extras" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8e55ad39-fc0b-45f6-a44e-e40288ffa0ae" LastKnownName="Extras" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="58b7e9f0-9401-4974-82bb-91dbfc8c61f9" name="Booking" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="97c3be57-c2a1-4078-b1ca-c62bd64f462b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e834064c-1d47-4037-b340-904c3d16084c" name="Extras" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8f953ad0-233d-4e5a-a69f-18f367a75d9e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0cdfa1b3-dbe9-4bcc-922a-dabd371b7060" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="8c828783-2b4a-426a-80db-81cf5c91a6a8" name="customerRef" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f6f9e965-3f36-4a67-a288-7c2d29a0d7a9" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e4a2f2b7-4483-45f6-9fc3-f446bb6849e0" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="1d5736f8-b2a6-4b1e-98ed-15458c2eee21" name="bookingRef" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="809a7be7-0574-4d85-b47c-03aee9491c76" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e4a2f2b7-4483-45f6-9fc3-f446bb6849e0" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="1cf2b706-63d8-4c05-9692-1d41f56ee71a" name="arrivalDate" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e21bb49f-6f63-470a-a1fb-745ab39da8c7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="df90341e-075a-40a5-9de6-f4276420ace7" LastKnownName="DateTime" />
+            </type_NamedElement>
+          </property>
+          <property Id="8921a4cc-81ff-48b7-b5bd-e2dc2312a268" name="departureDate" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5e34bbf3-8991-48b7-a786-60283cd9cca2" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="df90341e-075a-40a5-9de6-f4276420ace7" LastKnownName="DateTime" />
+            </type_NamedElement>
+          </property>
+          <property Id="f99b6123-22d6-4ee1-b2fc-a59420ccdf8f" name="listOfGuests" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f093ee53-cb5c-49b4-8316-2720db1ff050" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="914ff3fd-a5dc-498c-acb9-702a3efbf298" LastKnownName="List&lt;Guest&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="3986f4ef-0034-41d0-b160-082386d3ea88" name="listOfExtras" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="940c5fe0-e799-4738-966c-58d283e3d6fc" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f33c9850-2c76-4c4e-b885-a1b5b7f9f031" LastKnownName="List&lt;Extras&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="5ed5a7af-849e-4abe-85f1-25901f1f1534" name="ArrivalDate" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9804e3fc-9ae5-4c0f-833b-2419659a7cbd" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="df90341e-075a-40a5-9de6-f4276420ace7" LastKnownName="DateTime" />
+            </type_NamedElement>
+          </property>
+          <property Id="d4882f45-0572-4ccb-a229-6313fa174c1d" name="DepatrureDate" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0ec271bd-df32-4957-9f1e-d08ffecc8de9" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="df90341e-075a-40a5-9de6-f4276420ace7" LastKnownName="DateTime" />
+            </type_NamedElement>
+          </property>
+          <property Id="5f3c95f3-6c9b-4759-98f1-2224fa509f33" name="BookingRef" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="efa8dddf-11ec-4690-a7be-bbf91467b3db" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e4a2f2b7-4483-45f6-9fc3-f446bb6849e0" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="408eecaf-d985-40af-bee7-439bb9b36f47" name="CustomerRef" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1c76ceb8-0fcf-49f9-95bf-7e15a4773c06" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e4a2f2b7-4483-45f6-9fc3-f446bb6849e0" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="bdb272f0-5cb8-4032-8b31-17d293e3cf9e" name="ListOfGuests" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="de21b314-ed1b-400d-a7c3-1e46ed92a522" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="914ff3fd-a5dc-498c-acb9-702a3efbf298" LastKnownName="List&lt;Guest&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="d8e0ad47-7c32-44a6-be13-524f13671020" name="ListOfExtras" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="32a96ab1-d77d-46c9-bb17-260b1a557ad9" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f33c9850-2c76-4c4e-b885-a1b5b7f9f031" LastKnownName="List&lt;Extras&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
       <class Id="1d39cfd5-a950-47b0-8200-de9954b557d1" name="Customer" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="328e7917-59c3-46bc-a8d6-a708b218f7e4" />
-        <targetEnds>
-          <association Id="9c6a2c0c-8b4c-4c3a-94a5-d6ea7c1ad0c5" isDerived="false" sourceEndRoleName="Customer" targetEndRoleName="Extras" isLeaf="false" isAbstract="false">
-            <classMoniker Id="8e55ad39-fc0b-45f6-a44e-e40288ffa0ae" LastKnownName="Extras" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="2da09e3b-424c-47dd-bc67-661764e14608" name="Customer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="1e2c0e95-31a7-4fab-81ba-9330c2e59250" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="b98fe510-8e9d-49c0-869b-012b88600eb7" name="Extras" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="fcbf9960-6426-4c85-8a56-13eba1894d8a" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="d1bdb188-896f-4c78-ab61-49c22f9e35ea" />
-          </association>
-          <association Id="3f04ec62-583e-442c-9732-b14347435ffa" isDerived="false" sourceEndRoleName="Customer" targetEndRoleName="Guest" isLeaf="false" isAbstract="false">
-            <classMoniker Id="fed037b2-a313-4cae-ad43-ef0cb6347e57" LastKnownName="Guest" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="7ab047b7-aa36-47e4-b0ca-4e207f708f0a" name="Customer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="fe73cb74-0c3f-4aad-94db-8b0428d49a34" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="372a77ea-f8c2-4d28-863b-f1f9951b9cf8" name="Guest" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="e21d8590-1ee7-4550-bd70-24b4dc03f0b7" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="fb2a0180-2653-4263-a220-0b9d5a91e9ca" />
-          </association>
-        </targetEnds>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -170,8 +257,33 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="250e9a95-ec8b-4d2d-8ec0-49ec20e0ddd9" name="List" isAbstract="false" isLeaf="false" cachedFullName="List">
-        <elementDefinition Id="a8aa3c6e-9081-4f5e-98c4-78ac5a5e0074" />
+      <referencedType Id="e4a2f2b7-4483-45f6-9fc3-f446bb6849e0" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="e8c2265e-6046-462b-87b4-b5f610257829" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="df90341e-075a-40a5-9de6-f4276420ace7" name="DateTime" isAbstract="false" isLeaf="false" cachedFullName="DateTime">
+        <elementDefinition Id="61f05d56-adda-49c6-8a74-bc8a6f9b53cb" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="914ff3fd-a5dc-498c-acb9-702a3efbf298" name="List&lt;Guest&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Guest&gt;">
+        <elementDefinition Id="9dd903a1-e352-4197-b772-98638ceae083" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cbe59b62-64da-4ea7-88b3-93ee4e254e76" name="List&lt;Customer&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Customer&gt;">
+        <elementDefinition Id="36320e24-0eb7-4af1-b111-c0494e592736" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1405da07-3bfb-40a2-a0ee-e12268f97a92" name="List&lt;Booking&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Booking&gt;">
+        <elementDefinition Id="2897c7ca-a499-4d9d-be88-ff1b0e58954c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f33c9850-2c76-4c4e-b885-a1b5b7f9f031" name="List&lt;Extras&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Extras&gt;">
+        <elementDefinition Id="0a90f5f5-0155-49a8-be9c-c2bc63c8434e" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
