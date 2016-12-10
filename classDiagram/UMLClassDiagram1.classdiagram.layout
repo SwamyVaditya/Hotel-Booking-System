@@ -141,10 +141,6 @@
         <classShapeMoniker Id="448510bb-3059-404b-8504-696aa7545ae8" />
       </nodes>
     </dependencyConnector>
-    <commentShape Id="70df3d30-babf-4cd8-9cb2-8b88e7d42a5f" absoluteBounds="12.25, 3.375, 2.125, 1.125" customColor="251, 247, 200">
-      <commentMoniker Id="5d25a1be-f370-41b5-b87e-213e323573fd" />
-      <relativeChildShapes />
-    </commentShape>
     <classShape Id="dadbb9f8-a761-4efe-b0fe-b84e68918bab" absoluteBounds="6.75, 0.75, 1.5, 1.2226562251647315" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
       <classMoniker Id="872df382-e4a4-4b3c-a51c-1cec48961aa4" LastKnownName="Person" />
       <nestedChildShapes>

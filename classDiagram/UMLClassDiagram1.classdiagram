@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b28151de-be3b-4f77-aac8-6cdd5c321693" name="UMLClassDiagram1" linkedPackageId="ed6da01d-671f-4776-8a27-f4971a3e8f11" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <ownedCommentsInternal>
-    <comment Id="5d25a1be-f370-41b5-b87e-213e323573fd">
-      <elementDefinition Id="14b1d2c7-4d6c-4598-b203-bc3838f32b30" />
-      <body>RefNoFactory information:
-
-The CustomerWindow and the BookingWindow are dependent on it.
-
-I use the factory for the customerRef and the bookingRef.</body>
-    </comment>
-  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances Id="feb2496e-7c5a-4a44-8686-0ac9404b90a8">
       <profileInstance Id="996c4a3b-3731-46a5-bc7e-554fd411d559" name="StandardProfileL2">

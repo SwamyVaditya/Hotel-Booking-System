@@ -3,16 +3,6 @@
   dslVersion="1.0.0.0"
   Id="cdf177c5-76aa-4911-a964-00e5f1d062d9"
   name="classDiagram" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
-  <ownedCommentsInternal>
-    <comment
-      Id="14b1d2c7-4d6c-4598-b203-bc3838f32b30">
-      <body>RefNoFactory information:
-
-The CustomerWindow and the BookingWindow are dependent on it.
-
-I use the factory for the customerRef and the bookingRef.</body>
-    </comment>
-  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
