@@ -307,20 +307,162 @@
         <ownedOperationsInternal>
           <operation
             Id="c9a165a6-8025-4eb7-a717-34e0d492e716"
-            name="GetListC : List"
+            name="GetListC"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="eddb3c19-a390-4aa2-8bc0-c2f64d0e47e2"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a8aa3c6e-9081-4f5e-98c4-78ac5a5e0074"
+                      LastKnownName="List"
+                      LastKnownLocation="classDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="28e30736-b3d0-47a9-ab03-faceef899805"
-            name="GetListB : List"
+            name="GetListB"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a180daf5-8272-4e7e-8c68-5b8934d240b2"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a8aa3c6e-9081-4f5e-98c4-78ac5a5e0074"
+                      LastKnownName="List"
+                      LastKnownLocation="classDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="69b6123f-cdbd-48fc-a199-aaf1c947ea46"
+            name="addcustomer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8f6c5077-6540-4842-a471-b46ff188cccf"
+                  name="Customer"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c26d9eee-a6ee-4b7e-9722-471f4bdb9ba4"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="6b81cd2a-5178-4477-9634-a30663e97de2"
+                      LastKnownName="void"
+                      LastKnownLocation="classDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6163669f-1c62-4a7b-b45d-a0c5a9094467"
+            name="addbooking"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="28d6e8e6-f03a-4c45-98c2-5092586e6cd3"
+                  name="Customer"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b6d902ee-59d7-49d2-a7ba-a1db7ffdd022"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="6b81cd2a-5178-4477-9634-a30663e97de2"
+                      LastKnownName="void"
+                      LastKnownLocation="classDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c52abece-988d-4434-80fd-02f29606f05f"
+            name="updateBookingList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c4918304-dd75-40b0-9827-e6494cf2a576"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="6b81cd2a-5178-4477-9634-a30663e97de2"
+                      LastKnownName="void"
+                      LastKnownLocation="classDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e2fb3cfe-6a7c-4dcf-844a-5eb1c149440e"
+            name="updateCustomerList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0658aaaf-70b0-4ea0-a6e6-f016a8463c36"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="6b81cd2a-5178-4477-9634-a30663e97de2"
+                      LastKnownName="void"
+                      LastKnownLocation="classDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1177,7 +1319,106 @@
         name="RefNoFactory"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="6c76c816-a51f-4a49-91f4-2b027d9a9caf"
+            name="GetCustomerNumber"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b24a2668-b8e0-4aa2-8d51-882e04ea3eb6"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="e8c2265e-6046-462b-87b4-b5f610257829"
+                      LastKnownName="int"
+                      LastKnownLocation="classDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="56f97a61-db79-4a59-83d5-1a6cc735fae9"
+            name="GetBookingNumber"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="543ba499-5838-4048-a15d-d9ad7585b2e9"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="e8c2265e-6046-462b-87b4-b5f610257829"
+                      LastKnownName="int"
+                      LastKnownLocation="classDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="916c79dc-9b3a-424f-a539-ded3bb05841d"
+            name="GetBookingNo"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="036498ab-6b51-4b57-83d8-10d82892fa41"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="e8c2265e-6046-462b-87b4-b5f610257829"
+                      LastKnownName="int"
+                      LastKnownLocation="classDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e9d8180a-7ac4-4277-b89c-0b3acb350159"
+            name="GetCustomerNo"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d6b7ba6d-79cc-42b4-8f9a-2bebbff7eb16"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="e8c2265e-6046-462b-87b4-b5f610257829"
+                      LastKnownName="int"
+                      LastKnownLocation="classDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -1501,6 +1742,11 @@
           </property>
         </ownedAttributesInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6b81cd2a-5178-4477-9634-a30663e97de2"
+        name="void" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
