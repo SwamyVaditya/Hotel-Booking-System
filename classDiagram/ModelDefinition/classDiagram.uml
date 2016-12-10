@@ -115,13 +115,13 @@ I use the factory for the customerRef and the bookingRef.</body>
                     <literalString
                       Id="c0c14035-2ae4-4654-9f37-67b297c0eeaf"
                       name="Lower"
-                      value="0" />
+                      value="M" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
                       Id="19111a29-7a18-40cf-aa4c-7dab4685c064"
                       name="Upper"
-                      value="*" />
+                      value="M" />
                   </upperValueInternal>
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -167,13 +167,13 @@ I use the factory for the customerRef and the bookingRef.</body>
                     <literalString
                       Id="478afc19-0af6-4b99-b6ae-e91f22dde1be"
                       name="Lower"
-                      value="0" />
+                      value="M" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
                       Id="827d2b93-4a58-4bae-b96c-a04ddaf6dc23"
                       name="Upper"
-                      value="*" />
+                      value="M" />
                   </upperValueInternal>
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -660,13 +660,13 @@ I use the factory for the customerRef and the bookingRef.</body>
                     <literalString
                       Id="5b85c45d-b705-467b-8aca-0d238e0af3fb"
                       name="Lower"
-                      value="0" />
+                      value="M" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
                       Id="3a09ae11-19b0-4040-8c18-d14b33d91a04"
                       name="Upper"
-                      value="*" />
+                      value="M" />
                   </upperValueInternal>
                 </memberEnd>
               </associationHasOwnedEnds>
@@ -695,7 +695,20 @@ I use the factory for the customerRef and the bookingRef.</body>
                   isDerivedUnion="false"
                   aggregation="None"
                   isComposite="false"
-                  isNavigableOwned="false" />
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="7cea6b7a-e32e-4862-8d17-4d9e67e6b967"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="5a8469ca-464f-4019-a409-cee3012a909a"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
@@ -707,7 +720,20 @@ I use the factory for the customerRef and the bookingRef.</body>
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false" />
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="6323fc80-6a14-4039-ab41-0c13597089fb"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="68ac549c-1475-4ffa-8c63-7e596df6a552"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
