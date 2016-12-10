@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="cdf177c5-76aa-4911-a964-00e5f1d062d9"
+  name="classDiagram" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="84e6d021-27fa-4b79-a297-e8844956d3d3"
+        name="MainWindow"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="4149250e-faaa-4ce8-b615-4672f1513e3e"
+            isDerived="false"
+            sourceEndRoleName="MainWindow"
+            targetEndRoleName="Invoice"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="1d03f505-39f9-492e-b52e-38bb3022da93"
+              LastKnownName="Invoice"
+              LastKnownLocation="classDiagram.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="116664a6-254a-48d1-9691-7ca4ef99ba10"
+                  name="MainWindow"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1189b1d4-243f-41e5-82d8-fded3bf7984f"
+                  name="Invoice"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="aaef4a6d-9459-4362-b262-afca53c5131d"
+            isDerived="false"
+            sourceEndRoleName="MainWindow"
+            targetEndRoleName="Booking"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="a6f55c11-9a89-4a8d-8ba9-e54e5d87980c"
+              LastKnownName="Booking"
+              LastKnownLocation="classDiagram.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="faad6a4c-e786-48ee-a721-ee1ae6b597d1"
+                  name="MainWindow"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e729919c-c513-4db1-838c-54114365fcf5"
+                  name="Booking"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="d1c99517-2097-4c53-9c92-1d8731e90ff9"
+            isDerived="false"
+            sourceEndRoleName="MainWindow"
+            targetEndRoleName="Customer"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="328e7917-59c3-46bc-a8d6-a708b218f7e4"
+              LastKnownName="Customer"
+              LastKnownLocation="classDiagram.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bfca4eb1-6dfa-4aff-8a27-7d5c195be56f"
+                  name="MainWindow"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3522e1b5-3848-4198-8475-4aea976ad9e2"
+                  name="Customer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="b68c56e1-7af6-4bf6-a082-3f2a95950d4d"
+            name="idFactory"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="c7005c20-59ab-45cc-b9e9-5a0af3f02610"
+                LastKnownName="RefNoFactory"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="aa82a21a-3a0c-46c7-8481-b8b874f8dae9"
+            name="customerlist"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="a8aa3c6e-9081-4f5e-98c4-78ac5a5e0074"
+                LastKnownName="List"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="065ed0d1-316a-4583-bbfc-28b8eb2da8f9"
+            name="bookingslist"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="a8aa3c6e-9081-4f5e-98c4-78ac5a5e0074"
+                LastKnownName="List"
+                LastKnownLocation="classDiagram.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1d03f505-39f9-492e-b52e-38bb3022da93"
+        name="Invoice"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="eddf3816-c60b-4d6d-8633-4639c0eaef6d"
+        name="Extras"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a6f55c11-9a89-4a8d-8ba9-e54e5d87980c"
+        name="Booking"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="328e7917-59c3-46bc-a8d6-a708b218f7e4"
+        name="Customer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="d1bdb188-896f-4c78-ab61-49c22f9e35ea"
+            isDerived="false"
+            sourceEndRoleName="Customer"
+            targetEndRoleName="Extras"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="eddf3816-c60b-4d6d-8633-4639c0eaef6d"
+              LastKnownName="Extras"
+              LastKnownLocation="classDiagram.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1e2c0e95-31a7-4fab-81ba-9330c2e59250"
+                  name="Customer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fcbf9960-6426-4c85-8a56-13eba1894d8a"
+                  name="Extras"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="fb2a0180-2653-4263-a220-0b9d5a91e9ca"
+            isDerived="false"
+            sourceEndRoleName="Customer"
+            targetEndRoleName="Guest"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="de221ae2-6462-4a2d-a6db-ecb0fa493cca"
+              LastKnownName="Guest"
+              LastKnownLocation="classDiagram.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fe73cb74-0c3f-4aad-94db-8b0428d49a34"
+                  name="Customer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e21d8590-1ee7-4550-bd70-24b4dc03f0b7"
+                  name="Guest"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="de221ae2-6462-4a2d-a6db-ecb0fa493cca"
+        name="Guest"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c7005c20-59ab-45cc-b9e9-5a0af3f02610"
+        name="RefNoFactory"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4e94392b-d93d-4140-9fb2-1d48d06ca2e0"
+        name="BookingWindow"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f30fe536-8316-493c-a2fe-3d4726aecf7e"
+        name="CustomerWindow"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="a8aa3c6e-9081-4f5e-98c4-78ac5a5e0074"
+        name="List" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
